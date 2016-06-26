@@ -1,0 +1,455 @@
+/* HOME y General */
+@font-face {
+    font-family: 'Comforta';
+    src: url('../fonts/Comfortaa_Bold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Comforta';
+    src: url('../fonts/Comfortaa_Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Comforta';
+    src: url('../fonts/Comfortaa_Thin.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+*{margin: 0; padding: 0; font-family: Comforta;}
+
+.center{
+	width: 1024px;
+	margin: auto;
+}
+main{
+	display: block;
+	overflow: hidden;
+}
+main .wrapper-center{
+	min-height: calc( 100vh - 300px );
+	background: #f4f4f4;
+	width: 1024px;
+	margin: auto;
+}
+body:not(.home) main .wrapper-center{
+	overflow: auto;
+}
+header{
+	height: 100px;
+	background: #565656;
+}
+header h1{
+	display: inline-block;
+}
+header .menu{
+	display: inline-block;
+	margin-left: 20px;
+	padding: 0 50px;
+	line-height: 35px;
+	font-size: 18px;
+	color: #fff;
+	background: #333;
+	vertical-align: bottom;
+	letter-spacing: 1px;
+	cursor: pointer;
+	position: relative;
+}
+header .menu .categories{
+	/*display: none;*/
+	position: absolute;
+	top: 35px;
+	background: #333;
+	width: 1024px;
+	left: -224px;
+	z-index: 10;
+	height: 0;
+	overflow: hidden;
+	display: inline-block;
+	transition: .3s;
+}
+header .menu:hover .categories{
+	transition: .3s;
+	height: 130px;
+}
+header .menu .categories ul{
+	text-align: center;
+	padding-top: 45px;
+}
+header .menu .categories ul li{
+	display: inline-block;
+	list-style: none;
+	line-height: 60px;
+	margin: 15px 30px;
+	position: relative;
+}
+header .menu .categories ul li a{
+	text-decoration: none;
+	color: #fff;
+	transition: .2s;
+}
+header .menu .categories ul li a:before{
+	content: "";
+	display: inline-block;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	top: -30px;
+	background: url(../img/auto.png) no-repeat center;
+}
+header .menu .categories ul li a:hover{
+	opacity: .5;
+}
+header h1 a{
+	width: 200px;
+	height: 100px;
+	display: inline-block;
+	text-indent: -1000px;
+	background: url("../img/logo3.png") no-repeat center;
+}
+header .right{
+	float: right;
+	padding-top: 10px;
+	box-sizing: border-box;
+}
+header .right .search{
+	margin-bottom: 10px;
+}
+header .right .search input{
+	border: 0;
+	border-bottom: 2px solid #333;
+	margin-right: 5px;
+	line-height: 25px;
+	outline: none;
+	padding-left: 5px;
+	background: #808080;
+	box-sizing: border-box;
+	width: 417px;
+}
+header .right .search button{
+	border: 2px solid #333;
+	line-height: 25px;
+	outline: none;
+	padding: 0 15px;
+	background: #565656;
+	box-sizing: border-box;
+	font-weight: 600;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+header .right .search button:hover{
+	outline: none;
+	background: #333;
+	color: #565656;
+}
+header .right .login input:not([type="submit"]){
+	border: 0;
+	border-bottom: 2px solid #333;
+	margin-right: 5px;
+	line-height: 25px;
+	outline: none;
+	padding-left: 5px;
+	background: #808080;
+	box-sizing: border-box;
+	width: 150px;
+}
+header .right .login input[type="submit"]{
+	border: 2px solid #333;
+	line-height: 25px;
+	outline: none;
+	padding: 0 10px;
+	background: #565656;
+	box-sizing: border-box;
+	font-weight: 600;
+	letter-spacing: 1px;
+	cursor: pointer;
+	transition: .2s;
+}
+header .right .login input[type="submit"]:hover{
+	outline: none;
+	background: #333;
+	color: #565656;
+}
+
+
+header .right .login .extras,
+header .right .login .form{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+header .right .login .extras{
+	margin-left: 10px;
+	text-align: left;
+}
+header .right .login .extras a{
+	display: block;
+	text-decoration: none;
+	color: #f4f4f4;
+	transition: .2s;
+}
+header .right .login .extras a:first-child{
+	margin-bottom: 3px; 
+}
+header .right .login .extras a:hover{
+	opacity: .5;
+}
+footer{
+	background: #b0002f;
+}
+footer .top{
+	padding-top: 20px;
+	padding-bottom: 40px;
+}
+footer .top h3{
+	margin-bottom: 15px;
+	color: #333;
+}
+footer .top .container,
+footer .top .right,
+footer .top .left{
+	display: inline-block;
+	vertical-align: top;
+}
+footer .top .container{
+	margin-right: 50px;
+}
+footer .top .right{
+	margin-left: 200px;
+}
+footer .top li{
+	list-style: none;
+	margin: 7px 0;
+}
+footer .top a{
+	text-decoration: none;
+	color: #f4f4f4;
+}
+footer .bottom{
+	line-height: 40px;
+	background: #565656;
+	color: #fff;
+}
+footer .bottom .left{
+	display: inline-block;
+}
+footer .bottom .right{
+	float: right;
+}
+main .banner{
+	position: relative;
+	height: 450px;
+}
+main .banner .banner-container{
+	overflow: hidden;
+	position: absolute;
+	left: -100%;
+	right: -100%;
+	margin: auto;
+	text-align: center;
+	z-index: 0;
+}
+main .center{
+	padding: 20px 40px;
+	box-sizing: border-box;
+}
+main .center .items{
+	margin-bottom: 20px;
+}
+main .center .items h2{
+	margin-bottom: 10px;
+}
+main .center .items h2 a{
+	text-decoration: none;
+	color: #b0002f;
+	font-weight: 600;
+}
+main .center .items .games{
+	text-align: center;
+}
+main .center .items .games .game{
+	display: inline-block;
+	height: 200px;
+	margin: 0 35px;
+	position: relative;
+	overflow: hidden;
+}
+main .center .items .games .game:first-child{
+	margin-left: 0;
+}
+main .center .items .games .game:last-child{
+	margin-right: 0;
+}
+main .center .items .games .game .title{
+	display: inline-block;
+	width: 100%;
+	line-height: 40px;
+	text-align: left;
+	padding-left: 15px;
+	box-sizing: border-box;
+	position: absolute;
+	bottom: -40px;
+	left: 0;
+	background: #565656;
+	color: #fff;
+	transition: .3s;
+}
+main .center .items .games .game:hover .title{
+	bottom: 0;
+}
+.page-title{
+	margin-top: 30px;
+	margin-left: 50px;
+	font-size: 24px;
+	letter-spacing: 1px;
+	color: #b0002f;
+	margin-bottom: 20px;
+}
+
+
+/* REGISTRO */
+body.reg main .wrapper-center .form{
+	margin-bottom: 60px;
+}
+body.reg main .wrapper-center .form *{
+	display: block;
+	margin: auto;
+}
+body.reg main .wrapper-center .form input:not([type="submit"]){
+	border: 0;
+	border-bottom: 2px solid #333;
+	margin-bottom: 20px;
+	line-height: 25px;
+	outline: none;
+	padding-left: 5px;
+	background: #fff;
+	box-sizing: border-box;
+	width: 300px;
+}
+body.reg main .wrapper-center .form input[type="submit"]{
+	border: 2px solid #333;
+	line-height: 25px;
+	outline: none;
+	padding: 0 40px;
+	background: #565656;
+	box-sizing: border-box;
+	font-weight: 600;
+	letter-spacing: 1px;
+	cursor: pointer;
+	color: #fff;
+	transition: .2s;
+	margin-top: 40px;
+}
+body.reg main .wrapper-center .form input[type="submit"]:hover{
+	outline: none;
+	background: #f4f4f4;
+	color: #333;
+}
+body.reg main .wrapper-center .form .avatar{
+	border: 2px solid #333;
+	width: 130px;
+	height: 130px;
+	margin-bottom: 20px;
+	background: url(../img/avatar.png) no-repeat center;
+}
+
+
+/* LISTADO */
+body.listado main .wrapper-center .center{
+	padding: 20px 50px;
+}
+body.listado main .wrapper-center .center .games{
+	margin-bottom: 30px;
+}
+body.listado main .wrapper-center .center .items .games .game{
+	margin: 0 30px;
+}
+body.listado main .wrapper-center .center .items .games .game:first-child{
+	margin-left: 0;
+}
+body.listado main .wrapper-center .center .items .games .game:last-child{
+	margin-right: 0;
+}
+
+
+/* JUEGO */
+body.juego main .center{
+	padding: 0 60px;
+	margin-bottom: 40px;
+}
+body.juego main .center .game{
+	width: 900px;
+	height: 500px;
+	margin: auto;
+	border: 2px solid #333;
+	margin-bottom: 20px;
+}
+body.juego main .center .info .top *{
+	display: inline-block;
+	vertical-align: middle;
+}
+body.juego main .center .info .top .avatar{
+	border: 2px solid #333;
+	width: 50px;
+	height: 50px;
+	margin-bottom: 20px;
+	background: url(../img/avatar.png) no-repeat center;
+	background-size: 90%;
+	margin-right: 10px;
+}
+body.juego main .center .info .top .date{
+	float: right;
+}
+body.juego main .center .info .bottom span{
+	font-weight: 600;
+}
+body.juego main .center .info .bottom .genero{
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+body.juego main .center .coments{
+	margin-top: 20px;
+}
+body.juego main .center .coments .title{
+	line-height: 24px;
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+body.juego main .center .coments .comentar textarea{
+	border: 0;
+	border-bottom: 2px solid #333;
+	margin-right: 5px;
+	line-height: 25px;
+	outline: none;
+	padding-left: 8px;
+	padding-top: 5px;
+	background: #fff;
+	box-sizing: border-box;
+	width: 820px;
+	height: 100px;
+	resize: none;
+	display: inline-block;
+	vertical-align: bottom;
+}
+body.juego main .center .coments .comentar input[type="submit"]{
+	vertical-align: bottom;
+	border: 2px solid #333;
+	line-height: 40px;
+	outline: none;
+	padding: 0 13px;
+	background: #565656;
+	box-sizing: border-box;
+	font-weight: 600;
+	letter-spacing: 1px;
+	cursor: pointer;
+	color: #fff;
+	transition: .2s;
+	display: inline-block;
+}
+body.juego main .center .coments .comentar input[type="submit"]:hover{
+	outline: none;
+	background: #f4f4f4;
+	color: #333;
+}
