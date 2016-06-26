@@ -40,57 +40,93 @@ class User
 	/* data id iduser */
 	private function setId($id)
 	{
-		$this->id = $id;
+		if(is_null($id) || is_int(intval($id,10))) {
+			$this->id = $id;
+		}
+		else {
+			throw new Exception('el ID no es valido.'.$id);			
+		}
 	}
 	public function getId()
 	{
 		return $this->id;
 	}
+
 	/* data user username */
 	private function setUser($user)
 	{
-		$this->user = $user;
+		if(strlen($user)>=4 && strlen($user)<=45) {
+			$this->user = $user;
+		}
+		else {
+			throw new Exception('No ingreso un usuario valido.');			
+		}
 	}
 	public function getUser()
 	{
 		return $this->user;
 	}
+
 	/* data pass password */
 	private function setPass($pass)
 	{
-		$this->pass = $pass;
+		if(strlen($pass)>=6 && strlen($pass)<=15) {
+			$this->pass = password_hash($pass, PASSWORD_BCRYPT);
+		}
+		else {
+			throw new Exception('No ingreso una contraseña valida.');
+		}
 	}
 	public function getPass()
 	{
 		return $this->pass;
 	}
+
 	/* data email email */
 	private function setEmail($email)
 	{
-		$this->email = $email;
+		if (filter_var($email, FILTER_VALIDATE_EMAIL)) {		    
+			$this->email = $email;
+		}
+		else {
+			throw new Exception('No ingreso un email valido.');
+		}
 	}
 	public function getEmail()
 	{
 		return $this->email;
 	}
+
 	/* data name name */
 	private function setName($name)
 	{
-		$this->name = $name;
+		if(strlen($name)>=4 && strlen($name)<=45) {
+			$this->name = $name;
+		}
+		else {
+			throw new Exception('No ingreso un usuario valido.');			
+		}
 	}
 	public function getName()
 	{
 		return $this->name;
 	}
+
 	/* data lname lastname */
 	private function setLname($lname)
 	{
-		$this->lname = $lname;
+		if(strlen($lname)>=4 && strlen($lname)<=45) {
+			$this->lname = $lname;
+		}
+		else {
+			throw new Exception('No ingreso un usuario valido.');			
+		}
 	}
 	public function getLname()
 	{
 		return $this->lname;
 	}
+
 	/* data experience experience */
 	private function setExperience($experience)
 	{
@@ -100,6 +136,7 @@ class User
 	{
 		return $this->experience;
 	}
+
 	/* data level level */
 	private function setLevel($level)
 	{
@@ -109,33 +146,52 @@ class User
 	{
 		return $this->level;
 	}
+
 	/* data date date */
 	private function setDate($date)
 	{
-		$this->date = $date;
+		if(validateDate($date)) {
+			$this->date = $date;			
+		}
+		else {
+			throw new Exception('No ingreso una fecha de creado valido.');	
+		}
 	}
 	public function getDate()
 	{
 		return $this->date;
 	}
+
 	/* data birthday birthday */
 	private function setBirthday($birthday)
 	{
-		$this->birthday = $birthday;
+		if(validateDate($birthday)) {
+			$this->birthday = $birthday;			
+		}
+		else {
+			throw new Exception('No ingreso una fecha de cumpleaños valida.');	
+		}
 	}
 	public function getBirthday()
 	{
 		return $this->birthday;
 	}
+
 	/* data hig hoursingame */
 	private function setHig($hig)
 	{
-		$this->hig = $hig;
+		if(is_int($hig)) {
+			$this->hig = $hig;			
+		}
+		else {
+			thow new Exception('No ingreso cantidad de horas validas.');
+		}
 	}
 	public function getHig()
 	{
 		return $this->hig;
 	}
+
 	/* data avatar avatar */
 	private function setAvatar($avatar)
 	{
@@ -145,9 +201,10 @@ class User
 	{
 		return $this->avatar;
 	}
+
 	/* data status status */
 	private function setStatus($status)
-	{
+	{		
 		$this->status = $status;
 	}
 	public function getStatus()
