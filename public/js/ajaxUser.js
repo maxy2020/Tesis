@@ -2,7 +2,7 @@
 function todosLosUsuarios () {		
 	$.ajax({
 		method: "GET",
-		url: "../requestUser.php",
+		url: "../php/requestUser.php",
 		data: {},
 		beforeSend: function() {
 			console.log("loader");
@@ -20,7 +20,7 @@ function todosLosUsuarios () {
 function usuarioPorId (id) {
 	$.ajax({
 		method: "GET",
-		url: "../requestUser.php",
+		url: "../php/requestUser.php",
 		data: {
 			"id":id
 		},
@@ -44,7 +44,7 @@ function agregarUsuarioDB () {
 	var email = 'asdsa@asdasasdsadss.com';
 	$.ajax({
 		method: "POST",
-		url: "../requestUser.php",
+		url: "../php/requestUser.php",
 		data: {
 			'user':username,
 			'pass':password,
@@ -56,8 +56,8 @@ function agregarUsuarioDB () {
 		success: function($respond) {
 			console.log($respond);
 		},
-		error: function() {
-			console.log("error");
+		error: function($respond) {
+			console.log("error", $respond);
 		}
 	});
 }
@@ -69,7 +69,7 @@ function login () {
 	var password = 'asdas123333';
 	$.ajax({
 		method: "get",
-		url: "../requestAccount.php",
+		url: "../php/requestAccount.php",
 		data: {
 			'user':username,
 			'pass':password
@@ -91,7 +91,7 @@ function logout () {
 	/* igual q agregar objeto con data */
 	$.ajax({
 		method: "GET",
-		url: "../requestAccount.php",
+		url: "../php/requestAccount.php",
 		data: {
 			"logout":""
 		},
