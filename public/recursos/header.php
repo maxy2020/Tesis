@@ -1,6 +1,6 @@
 <header>
 		<div class="center">
-			<h1><a href="index.html">Indie Games</a></h1>
+			<h1><a href="index.php">Indie Games</a></h1>
 			<div class="menu">
 				<div class="btn">Juegos</div>
 			</div>
@@ -13,7 +13,7 @@
 						<input type="submit" value="Entrar" />
 					</div>
 					<div class="extras">
-						<a href="registro.html">Registrarme</a>
+						<a href="registro.php">Registrarme</a>
 						<a href="#">Olvide mi Pass</a>
 					</div>
 				</div>

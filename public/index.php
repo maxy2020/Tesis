@@ -5,7 +5,6 @@
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="shortcut icon" href="img/favicon.png" />
 		<script src="js/jquery-2.2.1.min.js"></script>
-		<script src="js/form-coment.js"></script>
 		<title>Indie Games</title>
 	</head>
 	<body class="home">
@@ -37,11 +36,6 @@
 								<img src="img/juego.jpg" alt="Un Juego" />
 								<div class="title">Battlefield 1</div>
 							</a>
-						</div>
-					</div>
-					<div class="items more-played">
-						<h2><a href="listado.html">Más Jugados</a></h2>
-						<div class="games">
 							<a href="juego.html" class="game">
 								<img src="img/juego.jpg" alt="Un Juego" />
 								<div class="title">Battlefield 1</div>
