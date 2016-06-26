@@ -5,7 +5,9 @@
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="shortcut icon" href="img/favicon.png" />
 		<script src="js/jquery-2.2.1.min.js"></script>
-		<script src="js/form-register.js"></script>
+		<!--script src="js/form-register.js"></script-->
+		<script src="js/ajaxUser.js"></script>
+		<script src="js/main.js"></script>
 		<title>Indie Games</title>
 	</head>
 	<body class="reg">
@@ -22,7 +24,7 @@
 					<input name="pass" type="password" placeholder="Contraseña" />
 					<input name="repass" type="password" placeholder="Repetir contraseña" />
 					<input name="email" type="mail" placeholder="Mail" />
-					<input type="submit" value="Crear" />
+					<input id="regist" type="submit" value="Crear" />
 				</form>
 			</div>
 		</main>
