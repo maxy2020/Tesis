@@ -4,4 +4,5 @@ usuarios
 	GET DATA{id=int} = usuario id
 	GET DATA{username=string} = usuario username
 
-	POST DATA{username,password,email} = agregar a base de datos;
+	POST DATA{username,password,email} = agregar a base de datos
+	POST DATA{username,password} = Login

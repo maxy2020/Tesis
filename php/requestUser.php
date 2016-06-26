@@ -26,16 +26,31 @@ if($_SERVER['REQUEST_METHOD'] == "GET") {
 	}
 }
 elseif($_SERVER['REQUEST_METHOD'] == "POST") {
-	if($_POST['email'] && $_POST['email'] && $_POST['email']){
+	if($_POST['email'] && $_POST['user'] && $_POST['pass']){
 		try {
-			$user = new User($_POST['email'],$_POST['email'],$_POST['email']);
+			$user = new User($_POST['email'],$_POST['user'],$_POST['pass']);
 			echo $user->addNew();
 		} catch (Exception $e) {
     		echo json_encode({'error'=>$e->getMessage()});
 		}
 	}
+	elseif($_POST['user'] && $_POST['pass']){
+		try {
+			$user = User::getByUserName($_POST['user']);
+			if($user){
+				if($user->getPass() == password_hash($_POST['pass'], PASSWORD_BCRYPT)){
+    				echo json_encode({'Login'=>'success'});
+				}
+			}
+			else {				
+				echo json_encode({"Login"=>"error"});
+			}
+		} catch (Exception $e) {
+    		echo json_encode({'Login'=>$e->getMessage()});
+		}
+	}
 	else {
-		return json_encode({"error"=>"error"});
+		echo json_encode({"error"=>"error"});
 	}
 }
 else {	
