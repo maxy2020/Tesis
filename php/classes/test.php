@@ -2,13 +2,8 @@
 
 <script>
 
-
-	/*
-		login();
-		logout();
-		agregarUsuarioDB();
-		usuarioPorId(3);
-		todosLosUsuarios();
-	*/
-
 </script>
+
+<?php
+	
+?>
