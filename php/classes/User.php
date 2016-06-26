@@ -20,7 +20,7 @@ class User
 	private $status;
 	private static $table = "user";
  
-	public function __construct($email, $user, $pass, $id=NULL, $name=NULL, $lname=NULL, $experience=0, $level=1, $date=NULL, $birthday=NULL, $hig=0, $avatar="img/user/empty.jpg", $status=1,)
+	public function __construct($email, $user, $pass, $id=NULL, $name=NULL, $lname=NULL, $experience=0, $level=1, $date=NULL, $birthday=NULL, $hig=0, $avatar="img/user/empty.jpg", $status=1)
 	{
 			$this->setId($id);
 			$this->setUser($user);
@@ -73,6 +73,9 @@ class User
 		if(strlen($pass)>=6 && strlen($pass)<=15) {
 			$this->pass = password_hash($pass, PASSWORD_BCRYPT);
 		}
+		elseif(strlen($pass)==60) {
+			$this->pass = $pass;			
+		}
 		else {
 			throw new Exception('No ingreso una contraseña valida.');
 		}
@@ -100,11 +103,11 @@ class User
 	/* data name name */
 	private function setName($name)
 	{
-		if(strlen($name)>=4 && strlen($name)<=45) {
+		if((strlen($name)>=4 && strlen($name)<=45) || is_null($name)) {
 			$this->name = $name;
 		}
 		else {
-			throw new Exception('No ingreso un usuario valido.');			
+			throw new Exception('No ingreso un nombre valido.');			
 		}
 	}
 	public function getName()
@@ -115,11 +118,11 @@ class User
 	/* data lname lastname */
 	private function setLname($lname)
 	{
-		if(strlen($lname)>=4 && strlen($lname)<=45) {
+		if((strlen($lname)>=4 && strlen($lname)<=45) || is_null($lname)) {
 			$this->lname = $lname;
 		}
 		else {
-			throw new Exception('No ingreso un usuario valido.');			
+			throw new Exception('No ingreso un apellido valido.');			
 		}
 	}
 	public function getLname()
@@ -150,7 +153,7 @@ class User
 	/* data date date */
 	private function setDate($date)
 	{
-		if(validateDate($date)) {
+		if(new DateTime($date)) {
 			$this->date = $date;			
 		}
 		else {
@@ -165,7 +168,7 @@ class User
 	/* data birthday birthday */
 	private function setBirthday($birthday)
 	{
-		if(validateDate($birthday)) {
+		if((new DateTime($birthday)) || is_null($birthday)) {
 			$this->birthday = $birthday;			
 		}
 		else {
@@ -180,11 +183,11 @@ class User
 	/* data hig hoursingame */
 	private function setHig($hig)
 	{
-		if(is_int($hig)) {
+		if(is_int(intval($hig)) || is_null($hig)) {
 			$this->hig = $hig;			
 		}
 		else {
-			thow new Exception('No ingreso cantidad de horas validas.');
+			throw new Exception('No ingreso cantidad de horas validas.');
 		}
 	}
 	public function getHig()
@@ -210,6 +213,42 @@ class User
 	public function getStatus()
 	{
 		return $this->status;
+	}
+
+	/* actions GET DB */
+
+	static function getAll()
+	{
+		$query = "SELECT * FROM " . static::$table;
+
+		$stmt = DBConnection::getStatement($query);
+
+		$users = [];
+
+		if($stmt->execute()) {
+			while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+
+				$user = new User($row["email"],$row["username"],$row["password"],$row["iduser"],$row["name"],$row["lastname"],$row["experience"],$row["level"],$row["date"],$row["birthday"],$row["hoursingame"],$row["avatar"],$row["status"]);
+				$users[] = $user;
+			}			
+		}
+
+		return $users;
+	}
+
+	static function getById($id)
+	{
+		$query = "SELECT * FROM " . static::$table . " WHERE iduser = ?";
+
+		$stmt = DBConnection::getStatement($query);
+
+		if($stmt->execute([$id])) {
+			if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+				return new User($row["email"],$row["username"],$row["password"],$row["iduser"],$row["name"],$row["lastname"],$row["experience"],$row["level"],$row["date"],$row["birthday"],$row["hoursingame"],$row["avatar"],$row["status"]);				
+			}			
+		}
+
+		return false;
 	}
 
 
