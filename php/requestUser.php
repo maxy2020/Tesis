@@ -28,6 +28,6 @@ elseif($_SERVER['REQUEST_METHOD'] == "POST") {
 	}
 }
 else {	
-	header('Location: http://www.example.com/');
+	header('Location: /public');
 	exit;
 }
