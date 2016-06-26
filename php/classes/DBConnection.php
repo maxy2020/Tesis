@@ -12,13 +12,13 @@ class DBConnection
 		$host = "localhost";
 		$user = "root";
 		$pass = "";
-		$name = "reminds";
+		$name = "indiegames";
 		$dsn = "mysql:host=" . $host . ";dbname=" . $name . ";charset=utf8";
 
 		try {
 			self::$database = new PDO($dsn, $user, $pass);
 		} catch(Exception $e) {
-			echo "Oops, error en la página: " . $e->getMessage();
+			echo "Error en la conexión: " . $e->getMessage();
 		}
 	}
 
