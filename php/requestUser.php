@@ -31,13 +31,13 @@ elseif($_SERVER['REQUEST_METHOD'] == "POST") {
 	if(isset($_POST['email']) && isset($_POST['user']) && isset($_POST['pass'])){
 		try {
 			$user = new User($_POST['email'],$_POST['user'],$_POST['pass']);
-			return $user->addNew();
+			echo $user->addNew();
 		} catch (Exception $e) {
-    		return json_encode(['error'=>$e->getMessage()]);
+    		echo json_encode(['error'=>$e->getMessage()]);
 		}
 	}
 	else {
-		return json_encode(["error"=>"error"]);
+		echo json_encode(["error"=>"error"]);
 	}
 }
 else {	
