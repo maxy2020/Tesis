@@ -14,6 +14,13 @@ if($_SERVER['REQUEST_METHOD'] == "GET") {
     		echo json_encode({'error'=>$e->getMessage()});
 		}
 	}
+	elseif(isset($_GET["user"])){
+		try {
+			echo json_encode(User::getByUserName($_GET["user"]));
+		} catch (Exception $e) {
+    		echo json_encode({'error'=>$e->getMessage()});
+		}
+	}
 	else{
 		echo json_encode(User::getAll());
 	}

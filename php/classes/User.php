@@ -274,6 +274,15 @@ class User
 		return $stmt->execute([$id]);
 	}
 
+	static public function removeByUserName($user)
+	{
+		$query = "SELECT * FROM " . static::$table . " WHERE username = ?";
+
+		$stmt = DBConnection::getStatement($query);
+
+		return $stmt->execute([$user]);
+	}
+
 	/* actions ADD NEW DB */
 
 	public function addNew()
