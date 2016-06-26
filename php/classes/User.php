@@ -278,22 +278,14 @@ class User
 
 	public function addNew()
 	{
-		$query = "INSERT INTO " . static::$table . " (username,password,email,name,lastname,status,experience,level,birthday,hoursingame,avatar) VALUES (:username,:password,:email,:name,:lastname,:status,:experience,:level,:birthday,:hoursingame,:avatar)";
+		$query = "INSERT INTO " . static::$table . " (username,password,email) VALUES (:username,:password,:email)";
 
 		$stmt = DBConnection::getStatement($query);
 
 		return $stmt->execute([
 			":username" => $this->user,
 			":password" => $this->pass,
-			":email" => $this->email,
-			":name" => $this->name,
-			":lastname" => $this->lname,
-			":status" => $this->status,
-			":experience" => $this->experience,
-			":level" => $this->level,
-			":birthday" => $this->birthday,
-			":hoursingame" => $this->hig,
-			":avatar" => $this->avatar
+			":email" => $this->email
 		]);
 	}
 
