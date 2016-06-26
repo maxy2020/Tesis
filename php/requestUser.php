@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once "DBConnection.php";
 require_once 'classes/User.php';
 
@@ -21,6 +23,9 @@ if($_SERVER['REQUEST_METHOD'] == "GET") {
     		echo json_encode({'error'=>$e->getMessage()});
 		}
 	}
+	elseif(isset($_GET["logout"])){
+		session_destroy();
+	}
 	else{
 		echo json_encode(User::getAll());
 	}
@@ -39,6 +44,15 @@ elseif($_SERVER['REQUEST_METHOD'] == "POST") {
 			$user = User::getByUserName($_POST['user']);
 			if($user){
 				if($user->getPass() == password_hash($_POST['pass'], PASSWORD_BCRYPT)){
+					if($user->getLevel()==0){
+						$_SESSION['login']  = 'user';
+					}
+					elseif($user->getLevel()==1){
+						$_SESSION['login']  = 'admin';						
+					}
+					elseif($user->getLevel()==2){
+						$_SESSION['login']  = 'superadmin';						
+					}
     				echo json_encode({'Login'=>'success'});
 				}
 			}
