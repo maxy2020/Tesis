@@ -1,9 +1,6 @@
 <?php
-	require_once("User.php");
-
-	$user = new User('testttttttt@testtt.com','testtttttttt','asdas123');
 
 	echo "<pre>";
-		print_r($user->addNew());
+		echo password_hash('asdas123', PASSWORD_BCRYPT);
 	echo "</pre>";
 ?>

@@ -240,10 +240,10 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `IndieGames`;
-INSERT INTO `IndieGames`.`user` (`iduser`, `username`, `password`, `email`, `name`, `lastname`, `status`, `experience`, `level`, `date`, `birthday`, `hoursingame`, `avatar`) VALUES (1, 'test', '81dc9bdb52d04dc20036dbd8313ed055', 'test@test.com', 'test', NULL, 1, 0, 1, '18-05-2016', NULL, 0, NULL);
-INSERT INTO `IndieGames`.`user` (`iduser`, `username`, `password`, `email`, `name`, `lastname`, `status`, `experience`, `level`, `date`, `birthday`, `hoursingame`, `avatar`) VALUES (2, 'test2', '81dc9bdb52d04dc20036dbd8313ed055', 'test2@test.com', 'test2', NULL, 1, 0, 2, '18-05-2016', NULL, 0, NULL);
-INSERT INTO `IndieGames`.`user` (`iduser`, `username`, `password`, `email`, `name`, `lastname`, `status`, `experience`, `level`, `date`, `birthday`, `hoursingame`, `avatar`) VALUES (3, 'test3', '81dc9bdb52d04dc20036dbd8313ed055', 'test3@test.com', 'test3', NULL, 0, 0, 1, '18-05-2016', NULL, 0, NULL);
-INSERT INTO `IndieGames`.`user` (`iduser`, `username`, `password`, `email`, `name`, `lastname`, `status`, `experience`, `level`, `date`, `birthday`, `hoursingame`, `avatar`) VALUES (4, 'test4', '81dc9bdb52d04dc20036dbd8313ed055', 'test4@test.com', 'test4', NULL, 1, 0, 1, '18-05-2016', NULL, 0, NULL);
+INSERT INTO `IndieGames`.`user` (`iduser`, `username`, `password`, `email`, `name`, `lastname`, `status`, `experience`, `level`, `date`, `birthday`, `hoursingame`, `avatar`) VALUES (1, 'test', '$2y$10$TyM08kGxvmwxwMe25Idd.uWMU2DgShVNv2DSiQJEncW.UtJdXA.1m', 'test@test.com', 'test', NULL, 1, 0, 1, '18-05-2016', NULL, 0, NULL);
+INSERT INTO `IndieGames`.`user` (`iduser`, `username`, `password`, `email`, `name`, `lastname`, `status`, `experience`, `level`, `date`, `birthday`, `hoursingame`, `avatar`) VALUES (2, 'test2', '$2y$10$TyM08kGxvmwxwMe25Idd.uWMU2DgShVNv2DSiQJEncW.UtJdXA.1m', 'test2@test.com', 'test2', NULL, 1, 0, 2, '18-05-2016', NULL, 0, NULL);
+INSERT INTO `IndieGames`.`user` (`iduser`, `username`, `password`, `email`, `name`, `lastname`, `status`, `experience`, `level`, `date`, `birthday`, `hoursingame`, `avatar`) VALUES (3, 'test3', '$2y$10$TyM08kGxvmwxwMe25Idd.uWMU2DgShVNv2DSiQJEncW.UtJdXA.1m', 'test3@test.com', 'test3', NULL, 0, 0, 1, '18-05-2016', NULL, 0, NULL);
+INSERT INTO `IndieGames`.`user` (`iduser`, `username`, `password`, `email`, `name`, `lastname`, `status`, `experience`, `level`, `date`, `birthday`, `hoursingame`, `avatar`) VALUES (4, 'test4', '$2y$10$TyM08kGxvmwxwMe25Idd.uWMU2DgShVNv2DSiQJEncW.UtJdXA.1m', 'test4@test.com', 'test4', NULL, 1, 0, 1, '18-05-2016', NULL, 0, NULL);
 
 COMMIT;
 
