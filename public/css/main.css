@@ -271,15 +271,9 @@ main .center .items .games{
 main .center .items .games .game{
 	display: inline-block;
 	height: 200px;
-	margin: 0 35px;
+	margin: 15px 20px;
 	position: relative;
 	overflow: hidden;
-}
-main .center .items .games .game:first-child{
-	margin-left: 0;
-}
-main .center .items .games .game:last-child{
-	margin-right: 0;
 }
 main .center .items .games .game .title{
 	display: inline-block;
