@@ -8,7 +8,11 @@ header('Content-Type: application/json; charset=utf-8');
 
 if($_SERVER['REQUEST_METHOD'] == "GET") {
 	if(isset($_GET["id"])){
-		echo json_encode(User::getById($_GET["id"]));
+		try {
+			echo json_encode(User::getById($_GET["id"]));
+		} catch (Exception $e) {
+    		echo json_encode({'error'=>$e->getMessage()});
+		}
 	}
 	else{
 		echo json_encode(User::getAll());
