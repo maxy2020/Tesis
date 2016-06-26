@@ -2,25 +2,22 @@
 
 session_start();
 
-require_once "DBConnection.php";
+require_once "classes/DBConnection.php";
 require_once 'classes/User.php';
-
-header('Content-Type: application/json; charset=utf-8');
-
 
 if($_SERVER['REQUEST_METHOD'] == "GET") {
 	if(isset($_GET["id"])){
 		try {
 			echo json_encode(User::getById($_GET["id"]));
 		} catch (Exception $e) {
-    		echo json_encode({'error'=>$e->getMessage()});
+    		echo json_encode(['error'=>$e->getMessage()]);
 		}
 	}
 	elseif(isset($_GET["user"])){
 		try {
 			echo json_encode(User::getByUserName($_GET["user"]));
 		} catch (Exception $e) {
-    		echo json_encode({'error'=>$e->getMessage()});
+    		echo json_encode(['error'=>$e->getMessage()]);
 		}
 	}
 	elseif(isset($_GET["logout"])){
@@ -36,7 +33,7 @@ elseif($_SERVER['REQUEST_METHOD'] == "POST") {
 			$user = new User($_POST['email'],$_POST['user'],$_POST['pass']);
 			echo $user->addNew();
 		} catch (Exception $e) {
-    		echo json_encode({'error'=>$e->getMessage()});
+    		echo json_encode(['error'=>$e->getMessage()]);
 		}
 	}
 	elseif($_POST['user'] && $_POST['pass']){
@@ -53,18 +50,18 @@ elseif($_SERVER['REQUEST_METHOD'] == "POST") {
 					elseif($user->getLevel()==2){
 						$_SESSION['login']  = 'superadmin';						
 					}
-    				echo json_encode({'Login'=>'success'});
+    				echo json_encode(['Login'=>'success']);
 				}
 			}
 			else {				
-				echo json_encode({"Login"=>"error"});
+				echo json_encode(["Login"=>"error"]);
 			}
 		} catch (Exception $e) {
-    		echo json_encode({'Login'=>$e->getMessage()});
+    		echo json_encode(['Login'=>$e->getMessage()]);
 		}
 	}
 	else {
-		echo json_encode({"error"=>"error"});
+		echo json_encode(["error"=>"error"]);
 	}
 }
 else {	

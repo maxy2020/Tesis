@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `IndieGames`.`videogame` (
   `title` VARCHAR(20) NOT NULL COMMENT '',
   `description` TEXT NULL DEFAULT NULL COMMENT '',
   `status` BIT(1) NOT NULL COMMENT '',
-  `date` DATETIME NOT NULL COMMENT '',
+  `date` TIMESTAMP NOT NULL COMMENT '',
   `avatar` VARCHAR(100) NULL DEFAULT NULL COMMENT '',
   `user_iduser` INT UNSIGNED NOT NULL COMMENT '',
   PRIMARY KEY (`idvideogame`)  COMMENT '',
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `IndieGames`.`comment` (
   `idcomment` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '',
   `comment` TEXT NOT NULL COMMENT '',
   `status` BIT(1) NOT NULL COMMENT '',
-  `date` DATETIME NOT NULL COMMENT '',
+  `date` TIMESTAMP NOT NULL COMMENT '',
   `user_iduser` INT UNSIGNED NOT NULL COMMENT '',
   `videogame_idvideogame` INT UNSIGNED NOT NULL COMMENT '',
   PRIMARY KEY (`idcomment`)  COMMENT '',
@@ -240,10 +240,10 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `IndieGames`;
-INSERT INTO `IndieGames`.`user` (`iduser`, `username`, `password`, `email`, `name`, `lastname`, `status`, `experience`, `level`, `date`, `birthday`, `hoursingame`, `avatar`) VALUES (1, 'test', '$2y$10$TyM08kGxvmwxwMe25Idd.uWMU2DgShVNv2DSiQJEncW.UtJdXA.1m', 'test@test.com', 'test', NULL, 1, 0, 1, '18-05-2016', NULL, 0, NULL);
-INSERT INTO `IndieGames`.`user` (`iduser`, `username`, `password`, `email`, `name`, `lastname`, `status`, `experience`, `level`, `date`, `birthday`, `hoursingame`, `avatar`) VALUES (2, 'test2', '$2y$10$TyM08kGxvmwxwMe25Idd.uWMU2DgShVNv2DSiQJEncW.UtJdXA.1m', 'test2@test.com', 'test2', NULL, 1, 0, 2, '18-05-2016', NULL, 0, NULL);
-INSERT INTO `IndieGames`.`user` (`iduser`, `username`, `password`, `email`, `name`, `lastname`, `status`, `experience`, `level`, `date`, `birthday`, `hoursingame`, `avatar`) VALUES (3, 'test3', '$2y$10$TyM08kGxvmwxwMe25Idd.uWMU2DgShVNv2DSiQJEncW.UtJdXA.1m', 'test3@test.com', 'test3', NULL, 0, 0, 1, '18-05-2016', NULL, 0, NULL);
-INSERT INTO `IndieGames`.`user` (`iduser`, `username`, `password`, `email`, `name`, `lastname`, `status`, `experience`, `level`, `date`, `birthday`, `hoursingame`, `avatar`) VALUES (4, 'test4', '$2y$10$TyM08kGxvmwxwMe25Idd.uWMU2DgShVNv2DSiQJEncW.UtJdXA.1m', 'test4@test.com', 'test4', NULL, 1, 0, 1, '18-05-2016', NULL, 0, NULL);
+INSERT INTO `IndieGames`.`user` (`iduser`, `username`, `password`, `email`, `name`, `lastname`, `status`, `experience`, `level`, `birthday`, `hoursingame`, `avatar`) VALUES (1, 'test', '$2y$10$TyM08kGxvmwxwMe25Idd.uWMU2DgShVNv2DSiQJEncW.UtJdXA.1m', 'test@test.com', 'test', NULL, 1, 0, 0, NULL, 0, NULL);
+INSERT INTO `IndieGames`.`user` (`iduser`, `username`, `password`, `email`, `name`, `lastname`, `status`, `experience`, `level`, `birthday`, `hoursingame`, `avatar`) VALUES (2, 'test2', '$2y$10$TyM08kGxvmwxwMe25Idd.uWMU2DgShVNv2DSiQJEncW.UtJdXA.1m', 'test2@test.com', 'test2', NULL, 1, 0, 0, NULL, 0, NULL);
+INSERT INTO `IndieGames`.`user` (`iduser`, `username`, `password`, `email`, `name`, `lastname`, `status`, `experience`, `level`, `birthday`, `hoursingame`, `avatar`) VALUES (3, 'test3', '$2y$10$TyM08kGxvmwxwMe25Idd.uWMU2DgShVNv2DSiQJEncW.UtJdXA.1m', 'test3@test.com', 'test3', NULL, 0, 0, 0, NULL, 0, NULL);
+INSERT INTO `IndieGames`.`user` (`iduser`, `username`, `password`, `email`, `name`, `lastname`, `status`, `experience`, `level`, `birthday`, `hoursingame`, `avatar`) VALUES (4, 'test4', '$2y$10$TyM08kGxvmwxwMe25Idd.uWMU2DgShVNv2DSiQJEncW.UtJdXA.1m', 'test4@test.com', 'test4', NULL, 1, 0, 0, NULL, 0, NULL);
 
 COMMIT;
 
@@ -253,9 +253,9 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `IndieGames`;
-INSERT INTO `IndieGames`.`videogame` (`idvideogame`, `title`, `description`, `status`, `date`, `avatar`, `user_iduser`) VALUES (1, 'Shoot Explotion', NULL, 1, '18-05-2016', NULL, 2);
-INSERT INTO `IndieGames`.`videogame` (`idvideogame`, `title`, `description`, `status`, `date`, `avatar`, `user_iduser`) VALUES (2, 'Sex', 'juego erotico', 0, '18-05-2016', NULL, 2);
-INSERT INTO `IndieGames`.`videogame` (`idvideogame`, `title`, `description`, `status`, `date`, `avatar`, `user_iduser`) VALUES (3, 'Goal 3', 'Juego de futbol con grandes poderes', 1, '18-05-2016', NULL, 2);
+INSERT INTO `IndieGames`.`videogame` (`idvideogame`, `title`, `description`, `status`, `avatar`, `user_iduser`) VALUES (1, 'Shoot Explotion', NULL, 1, NULL, 2);
+INSERT INTO `IndieGames`.`videogame` (`idvideogame`, `title`, `description`, `status`, `avatar`, `user_iduser`) VALUES (2, 'Sex', 'juego erotico', 0, NULL, 2);
+INSERT INTO `IndieGames`.`videogame` (`idvideogame`, `title`, `description`, `status`, `avatar`, `user_iduser`) VALUES (3, 'Goal 3', 'Juego de futbol con grandes poderes', 1, NULL, 2);
 
 COMMIT;
 
@@ -265,9 +265,9 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `IndieGames`;
-INSERT INTO `IndieGames`.`comment` (`idcomment`, `comment`, `status`, `date`, `user_iduser`, `videogame_idvideogame`) VALUES (1, 'Muy bueno Juego, muy adictivo', 1, '18-05-2016', 1, 1);
-INSERT INTO `IndieGames`.`comment` (`idcomment`, `comment`, `status`, `date`, `user_iduser`, `videogame_idvideogame`) VALUES (2, 'Es una forreada este juego, y el creador parece gay.', 0, '18-05-2016', 3, 1);
-INSERT INTO `IndieGames`.`comment` (`idcomment`, `comment`, `status`, `date`, `user_iduser`, `videogame_idvideogame`) VALUES (3, 'bastante bueno esta el juego lo recomiendo', 1, '18-05-2016', 2, 2);
+INSERT INTO `IndieGames`.`comment` (`idcomment`, `comment`, `status`, `user_iduser`, `videogame_idvideogame`) VALUES (1, 'Muy bueno Juego, muy adictivo', 1, 1, 1);
+INSERT INTO `IndieGames`.`comment` (`idcomment`, `comment`, `status`, `user_iduser`, `videogame_idvideogame`) VALUES (2, 'Es una forreada este juego, y el creador parece gay.', 0, 3, 1);
+INSERT INTO `IndieGames`.`comment` (`idcomment`, `comment`, `status`, `user_iduser`, `videogame_idvideogame`) VALUES (3, 'bastante bueno esta el juego lo recomiendo', 1, 2, 2);
 
 COMMIT;
 

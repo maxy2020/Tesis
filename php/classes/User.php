@@ -232,12 +232,15 @@ class User
 
 		if($stmt->execute()) {
 			while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-				$users[] = static::arrayToObject($row);
+				$users[] = get_object_vars (static::arrayToObject($row));
 			}			
 		}
 
 		return $users;
 	}
+
+	/* objeto a arreglo */
+
 
 	static public function getById($id)
 	{
@@ -247,7 +250,22 @@ class User
 
 		if($stmt->execute([$id])) {
 			if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-				return static::arrayToObject($row);
+				return get_object_vars (static::arrayToObject($row));
+			}			
+		}
+
+		return false;
+	}
+
+	static public function getByUserName($user)
+	{
+		$query = "SELECT * FROM " . static::$table . " WHERE username = ?";
+
+		$stmt = DBConnection::getStatement($query);
+
+		if($stmt->execute([$user])) {
+			if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+				return get_object_vars (static::arrayToObject($row));
 			}			
 		}
 
