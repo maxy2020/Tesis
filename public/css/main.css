@@ -43,6 +43,13 @@ header{
 header h1{
 	display: inline-block;
 }
+header .menu .btn a{
+	color: #FFF;
+	text-decoration: none;
+}
+header .menu:hover{
+	opacity: .6;
+}
 header .menu{
 	display: inline-block;
 	margin-left: 20px;
@@ -57,7 +64,6 @@ header .menu{
 	position: relative;
 }
 header .menu .categories{
-	/*display: none;*/
 	position: absolute;
 	top: 35px;
 	background: #333;

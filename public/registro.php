@@ -2,11 +2,11 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-			<link rel="stylesheet" href="css/main.css" />
-			<link rel="shortcut icon" href="img/favicon.png" />
-			<script src="js/jquery-2.2.1.min.js"></script>
-			<script src="js/form-register.js"></script>
-			<title>Indie Games</title>
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="shortcut icon" href="img/favicon.png" />
+		<script src="js/jquery-2.2.1.min.js"></script>
+		<script src="js/form-register.js"></script>
+		<title>Indie Games</title>
 	</head>
 	<body class="reg">
 		<?php
