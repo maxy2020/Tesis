@@ -42,9 +42,9 @@
 	/* user Add */
 	function agregarUsuarioDB () {
 		/* en realidad tiene q recibir un objeto ya con los data */
-		var username = 'usuariotest11';
-		var password = 'asdas123333';
-		var email = 'lalalala@tutututu.com';
+		var username = 'usuariotest123123';
+		var password = 'asdas123';
+		var email = 'asdsa@asdasasdsadss.com';
 		$.ajax({
 			method: "POST",
 			url: "../requestUser.php",
@@ -71,8 +71,8 @@
 		var username = 'usuariotest11';
 		var password = 'asdas123333';
 		$.ajax({
-			method: "POST",
-			url: "../requestUser.php",
+			method: "get",
+			url: "../requestAccount.php",
 			data: {
 				'user':username,
 				'pass':password
@@ -83,13 +83,39 @@
 			success: function($respond) {
 				console.log($respond);
 			},
+			error: function($respond) {
+				console.log("error");
+			}
+		});
+	}
+
+	/* loguin user */
+	function logout () {
+		/* igual q agregar objeto con data */
+		$.ajax({
+			method: "GET",
+			url: "../requestAccount.php",
+			data: {
+				"logout":""
+			},
+			beforeSend: function() {
+				console.log("loader");
+			},
+			success: function($respond) {
+				console.log($respond);
+			},
 			error: function() {
 				console.log("error");
 			}
-		});	
+		});
 	}
 
-	login();
-
+		login();
+	/*
+		logout();
+		agregarUsuarioDB();
+		usuarioPorId(3);
+		todosLosUsuarios();
+	*/
 
 </script>

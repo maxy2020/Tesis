@@ -265,7 +265,7 @@ class User
 
 		if($stmt->execute([$user])) {
 			if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-				return get_object_vars (static::arrayToObject($row));
+				return static::arrayToObject($row);
 			}			
 		}
 
