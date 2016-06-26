@@ -1,0 +1,6 @@
+usuarios
+
+	GET DATA{} = TODOS
+	GET DATA{id=int} = usuario id
+
+	POST DATA{username,password,email} = agregar a base de datos;
