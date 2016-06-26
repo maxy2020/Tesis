@@ -215,9 +215,14 @@ class User
 		return $this->status;
 	}
 
+	static private function arrayToObject($arr)
+	{
+		return new User($arr["email"],$arr["username"],$arr["password"],$arr["iduser"],$arr["name"],$arr["lastname"],$arr["experience"],$arr["level"],$arr["date"],$arr["birthday"],$arr["hoursingame"],$arr["avatar"],$arr["status"]);		
+	}
+
 	/* actions GET DB */
 
-	static function getAll()
+	static public function getAll()
 	{
 		$query = "SELECT * FROM " . static::$table;
 
@@ -227,16 +232,14 @@ class User
 
 		if($stmt->execute()) {
 			while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-
-				$user = new User($row["email"],$row["username"],$row["password"],$row["iduser"],$row["name"],$row["lastname"],$row["experience"],$row["level"],$row["date"],$row["birthday"],$row["hoursingame"],$row["avatar"],$row["status"]);
-				$users[] = $user;
+				$users[] = static::arrayToObject($row);
 			}			
 		}
 
 		return $users;
 	}
 
-	static function getById($id)
+	static public function getById($id)
 	{
 		$query = "SELECT * FROM " . static::$table . " WHERE iduser = ?";
 
@@ -244,118 +247,54 @@ class User
 
 		if($stmt->execute([$id])) {
 			if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-				return new User($row["email"],$row["username"],$row["password"],$row["iduser"],$row["name"],$row["lastname"],$row["experience"],$row["level"],$row["date"],$row["birthday"],$row["hoursingame"],$row["avatar"],$row["status"]);				
+				return static::arrayToObject($row);
 			}			
 		}
 
 		return false;
 	}
 
+	/* actions REMOVE DB */
 
-
-
-
-/*
-	private function setId($id)
+	public function remove()
 	{
-		if(is_null($id) || is_int(intval($id,10))) {
-			$this->id = $id;
-		}
-		else {
-			throw new Exception('el ID no es valido.'.$id);			
-		}
-
-	}
-
-	private function setName($name)
-	{
-		if(strlen($name)>=4 && strlen($name)<=15) {
-			$this->user = $name;
-		}
-		else {
-			throw new Exception('No ingreso un usuario valido.');			
-		}
-
-	}
-
-	private function setPass($pass)
-	{
-		if(strlen($pass) >= 4 && strlen($pass) <= 12) {
-			$this->pass = md5($pass);
-		}
-		else if(strlen($pass)==32){
-			$this->pass = $pass;
-		}
-		else {
-			throw new Exception('El password no cumple con los requisitos.');
-		}
-	}
-
-	public function getId() {
-		return $this->id;
-	}
-
-	public function getName() {
-		return $this->user;
-	}
-
-	public function getPassword() {
-		return $this->pass;
-	}
-
-	public static function getUsers()
-	{
-			$query = "SELECT * FROM " . static::$table;
-
-			$stmt = DBConnection::getStatement($query);
-
-			$users = [];
-
-			if($stmt->execute()) {
-				while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-					$user = new User($row["users"],$row["pass"],$row["iduser"]);
-					$users[] = $user;
-				}			
-			}
-
-			return $users;
-	}
-
-	public static function getUserByName($name)
-	{
-		$query = "SELECT * FROM " . static::$table . " WHERE users = ?";
+		$query = "UPDATE " . static::$table . " SET status=0 WHERE iduser = ? AND status=1";
 
 		$stmt = DBConnection::getStatement($query);
 
-		if($stmt->execute([$name])) {
-			if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-				$user = new User($row["users"],$row["pass"],$row["iduser"]);
-				return $user;
-			}
-		}
-
-		return false;
+		return $stmt->execute([$this->id]);
 	}
 
-	public static function getUserById($id)
+	static public function removeById($id)
 	{
-		$query = "SELECT * FROM " . static::$table . " WHERE iduser = ?";
+		$query = "UPDATE " . static::$table . " SET status=0 WHERE iduser = ? AND status=1";
 
 		$stmt = DBConnection::getStatement($query);
 
-		if($stmt->execute([$id])) {
-			if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-				$user = new User($row["users"],$row["pass"],$row["iduser"]);
-				return $user;
-			}
-			else {
-				return false; /* algo que identifique que el id no existe 
-			}
-		}
-		else {
-			return false; /* parametro malo 
-		}
-
+		return $stmt->execute([$id]);
 	}
-*/
+
+	/* actions ADD NEW DB */
+
+	public function addNew()
+	{
+		$query = "INSERT INTO " . static::$table . " (username,password,email,name,lastname,status,experience,level,birthday,hoursingame,avatar) VALUES (:username,:password,:email,:name,:lastname,:status,:experience,:level,:birthday,:hoursingame,:avatar)";
+
+		$stmt = DBConnection::getStatement($query);
+
+		return $stmt->execute([
+			":username" => $this->user,
+			":password" => $this->pass,
+			":email" => $this->email,
+			":name" => $this->name,
+			":lastname" => $this->lname,
+			":status" => $this->status,
+			":experience" => $this->experience,
+			":level" => $this->level,
+			":birthday" => $this->birthday,
+			":hoursingame" => $this->hig,
+			":avatar" => $this->avatar
+		]);
+	}
+
 }
