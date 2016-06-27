@@ -114,7 +114,7 @@ class Videogame
 	static public function getGames($amount=NULL)
 	{
 		if(IS_NULL($amount)){
-			$query = "SELECT * FROM " . static::$table;
+			$query = "SELECT * FROM " . static::$table . " ORDER BY date DESC";
 
 			$stmt = DBConnection::getStatement($query);
 
@@ -129,7 +129,7 @@ class Videogame
 			return $games;
 		}
 		else {
-			$query = "SELECT * FROM " . static::$table ." LIMIT " . $amount;
+			$query = "SELECT * FROM " . static::$table . " ORDER BY date DESC LIMIT " . $amount ;
 
 			$stmt = DBConnection::getStatement($query);
 
