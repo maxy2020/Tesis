@@ -178,6 +178,25 @@ header .right .login input[type="submit"]:hover{
 	color: #565656;
 }
 
+header .right .user-container *{
+	display: inline-block;
+}
+header .right .user-container .btn{
+	border: 2px solid #333;
+	line-height: 25px;
+	outline: none;
+	padding: 0 10px;
+	background: #565656;
+	box-sizing: border-box;
+	font-weight: 600;
+	letter-spacing: 1px;
+	cursor: pointer;
+	transition: .2s;
+}
+header .right .user-container .btn:hover{
+	background: #333;
+	color: #565656;
+}
 
 header .right .login .extras,
 header .right .login .form{
