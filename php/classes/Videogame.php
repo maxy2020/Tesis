@@ -14,7 +14,7 @@ class Videogame
 	private $status;
 	private static $table = "videogame";
  
-	public function __construct($title, $link, $iduser,$id=NULL, $date=NULL, $descrip=NULL, $avatar="img/juegos/default.jpg", $status=1)
+	public function __construct($title, $link, $iduser, $descrip=NULL, $id=NULL, $date=NULL, $avatar="img/juegos/default.jpg", $status=1)
 	{
 			$this->setId($id);
 			$this->setTitle($title);
@@ -76,12 +76,12 @@ class Videogame
 		return $this->avatar;
 	}
 
-	public static function setLink($link)
+	public function setLink($link)
 	{
 		$this->link = $link;
 	}
 
-	public static function getLink()
+	public function getLink()
 	{
 		return $this->link;
 	}
@@ -108,7 +108,7 @@ class Videogame
 
 	static private function arrayToObject($arr)
 	{
-		return new Videogame($arr['title'],$arr['url'],$arr['user_iduser'],$arr['idvideogame'],$arr['date'],$arr['description'],$arr['avatar'],$arr['status']);		
+		return new Videogame($arr['title'],$arr['url'],$arr['user_iduser'],$arr['description'],$arr['idvideogame'],$arr['date'],$arr['avatar'],$arr['status']);		
 	}
 
 	static public function getGames($amount=NULL)
@@ -157,5 +157,44 @@ class Videogame
 			}			
 		}
 
+	}
+
+	public function addNew()
+	{
+		$query = "INSERT INTO " . static::$table . " (title,description,status,url,avatar,user_iduser) VALUES (:title,:description,1,:url,:avatar,:user_iduser)";
+
+		$stmt = DBConnection::getStatement($query);
+
+		return $stmt->execute([
+			":title" => $this->title,
+			":description" => $this->descrip,
+			":url" => $this->link,
+			":avatar" => $this->avatar,
+			":user_iduser" => $this->iduser
+		]);
+	}
+
+	public function editGame()
+	{
+		$query = "UPDATE " . static::$table . " SET title=:title,description=:description,url=:url,avatar=:avatar WHERE id=:id";
+
+		$stmt = DBConnection::getStatement($query);
+
+		return $stmt->execute([
+			":id" => $this->id,
+			":title" => $this->title,
+			":description" => $this->descrip,
+			":url" => $this->link,
+			":avatar" => $this->avatar
+		]);	
+	}
+
+	static public function removeById($id)
+	{
+		$query = "UPDATE " . static::$table . " SET status=0 WHERE idvideogame=? AND status=1";
+
+		$stmt = DBConnection::getStatement($query);
+
+		return $stmt->execute([$id]);
 	}
 }
