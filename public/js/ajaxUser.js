@@ -74,7 +74,6 @@ function agregarUsuarioDB (user, pass, mail) {
 /* loguin user */
 function login (user, pass) {
 	/* igual q agregar objeto con data */
-			console.log("asdasd ", user, pass);
 	var username = user;
 	var password = pass;
 	$.ajax({

@@ -22,7 +22,7 @@ elseif($_SERVER['REQUEST_METHOD'] == "POST") {
 		try {
 			$user = User::getByUserName($_POST['user']);
 			if($user){
-				if($user->getPass() == password_hash($_POST['pass'], PASSWORD_BCRYPT)){
+				if(password_verify($_POST['pass'], $user->getPass())){
 					if($user->getLevel()==0){
 						$_SESSION['login']  = 'user';
 					}
@@ -34,6 +34,9 @@ elseif($_SERVER['REQUEST_METHOD'] == "POST") {
 					}
 					$_SESSION['iduser'] = $user->getId();
     				echo json_encode(['Login'=>'success']);
+				}
+				else {
+    				echo json_encode(['pass1'=>$user->getPass(),'pass2'=>password_hash($_POST['pass'], PASSWORD_BCRYPT)]);					
 				}
 			}
 			else {				
