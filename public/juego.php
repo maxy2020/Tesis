@@ -16,9 +16,11 @@
 		<?php
 			include("recursos/header.php");
 			require_once ("../php/classes/Videogame.php");
+			require_once ("../php/classes/User.php");
 
 			if(isset($_GET["id"]) && is_int(intval($_GET["id"]))){
 				$game = Videogame::getGame($_GET["id"]);
+				$user = User::getByIdWeb($game['user_iduser']);
 			}
 			else {
 				header("Location: index.php");
@@ -36,8 +38,8 @@
 					<div class="info">
 						<div class="top">
 							<div class="avatar"></div>
-							<div class="name">Usuario</div>
-							<div class="date">07/03/2016</div>
+							<div class="name"><?php echo $user['username']; ?></div>
+							<div class="date"><?php $date = new DateTime($game['date']); echo $date->format('d-m-Y H:i:s');  ?></div>
 						</div>
 						<div class="bottom">
 							<div class="desc"><p><span>Descripción: </span><?php echo $game['description']; ?></p></div>

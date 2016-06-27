@@ -257,6 +257,21 @@ class User
 		return false;
 	}
 
+	static public function getByIdWeb($id)
+	{
+		$query = "SELECT * FROM " . static::$table . " WHERE iduser = ?";
+
+		$stmt = DBConnection::getStatement($query);
+
+		if($stmt->execute([$id])) {
+			if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+				return $row;
+			}			
+		}
+
+		return false;
+	}
+
 	static public function getByUserName($user)
 	{
 		$query = "SELECT * FROM " . static::$table . " WHERE username = ?";
