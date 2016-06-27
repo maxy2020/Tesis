@@ -9,29 +9,19 @@ class User
 	private $descrip;
 	private $date;
 	private $avatar;
+	private $iduser;
 	private $status;
 	private static $table = "user";
  
 	public function __construct($email, $user, $pass, $id=NULL, $name=NULL, $lname=NULL, $experience=0, $level=0, $date=NULL, $birthday=NULL, $hig=0, $avatar="img/user/empty.jpg", $status=1)
 	{
 			$this->setId($id);
-			$this->setUser($user);
-			$this->setPass($pass);
-			$this->setEmail($email);
-			$this->setName($name);
-			$this->setLname($lname);
-			$this->setExperience($experience);
-			$this->setLevel($level);
+			$this->setTitle($title);
 			$this->setDate($date);
-			$this->setBirthday($birthday);
-			$this->setHig($hig);
+			$this->setDescrip($descrip);
 			$this->setAvatar($avatar);
+			$this->setTable($table);
 			$this->setStatus($status);
-	}
-
-	public function getId()
-	{
-		return $this->id;
 	}
 
 	public function setId($id)
@@ -39,9 +29,9 @@ class User
 		$this->id = $id;
 	}
 
-	public function getTitle()
+	public function getId()
 	{
-		return $this->title;
+		return $this->id;
 	}
 
 	public function setTitle($title)
@@ -49,9 +39,9 @@ class User
 		$this->title = $title;
 	}
 
-	public function getDate()
+	public function getTitle()
 	{
-		return $this->date;
+		return $this->title;
 	}
 
 	public function setDate($date)
@@ -59,9 +49,9 @@ class User
 		$this->date = $date;
 	}
 
-	public function getDescrip()
+	public function getDate()
 	{
-		return $this->descrip;
+		return $this->date;
 	}
 
 	public function setDescrip($descrip)
@@ -69,9 +59,9 @@ class User
 		$this->descrip = $descrip;
 	}
 
-	public function getAvatar()
+	public function getDescrip()
 	{
-		return $this->avatar;
+		return $this->descrip;
 	}
 
 	public function setAvatar($avatar)
@@ -79,9 +69,9 @@ class User
 		$this->avatar = $avatar;
 	}
 
-	public static function getTable()
+	public function getAvatar()
 	{
-		return self::$table;
+		return $this->avatar;
 	}
 
 	public static function setTable($table)
@@ -89,13 +79,29 @@ class User
 		self::$table = $table;
 	}
 
-	public function getStatus()
+	public static function getTable()
 	{
-		return $this->status;
+		return self::$table;
 	}
 
 	public function setStatus($status)
 	{
 		$this->status = $status;
 	}
+
+	public function getStatus()
+	{
+		return $this->status;
+	}
+
+	public function setIduser($iduser)
+	{
+		$this->iduser = $iduser;
+	}
+
+	public function getIduser()
+	{
+		return $this->iduser;
+	}
+
 

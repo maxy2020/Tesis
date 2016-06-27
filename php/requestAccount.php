@@ -32,6 +32,7 @@ elseif($_SERVER['REQUEST_METHOD'] == "POST") {
 					elseif($user->getLevel()==2){
 						$_SESSION['login']  = 'superadmin';
 					}
+					$_SESSION['iduser'] = $user->getId();
     				return json_encode(['Login'=>'success']);
 				}
 			}
