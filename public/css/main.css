@@ -325,6 +325,9 @@ main .center .items .games .game:hover .title{
 	color: #b0002f;
 	margin-bottom: 20px;
 }
+body.listado .page-title{
+	margin-bottom: 0;
+}
 
 
 /* REGISTRO */
