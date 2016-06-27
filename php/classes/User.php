@@ -305,7 +305,7 @@ class User
 
 	public function addNew()
 	{
-		$query = "INSERT INTO " . static::$table . " (username,password,email) VALUES (:username,:password,:email)";
+		$query = "INSERT INTO " . static::$table . " (username,password,email,status) VALUES (:username,:password,:email,1)";
 
 		$stmt = DBConnection::getStatement($query);
 

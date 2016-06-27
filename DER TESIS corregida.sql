@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `IndieGames`.`user` (
   `username` VARCHAR(45) NOT NULL COMMENT '',
   `password` VARCHAR(60) NOT NULL COMMENT '',
   `email` VARCHAR(100) NOT NULL COMMENT '',
-  `name` VARCHAR(45) NOT NULL COMMENT '',
+  `name` VARCHAR(45) NULL COMMENT '',
   `lastname` VARCHAR(45) NULL DEFAULT NULL COMMENT '',
   `status` BIT(1) NOT NULL COMMENT '',
   `experience` BIGINT NOT NULL COMMENT '',
