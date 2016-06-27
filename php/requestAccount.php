@@ -33,6 +33,7 @@ elseif($_SERVER['REQUEST_METHOD'] == "POST") {
 						$_SESSION['login']  = 'superadmin';
 					}
 					$_SESSION['iduser'] = $user->getId();
+					$_SESSION['name'] = $user->getByUserName();
     				echo json_encode(['Login'=>'success']);
 				}
 				else {
