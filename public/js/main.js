@@ -52,6 +52,5 @@ $(document).ready(function() {
 		var clave = $("header .login .form #pass");
 
 		login(usuario.val(), clave.val());
-
 	});
 });

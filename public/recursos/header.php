@@ -6,17 +6,26 @@
 		</div>
 		<div class="right">
 			<div class="search"><input type="search" /><button>BUSCAR</button></div>
-			<div class="login">
-				<form class="form">
-					<input id="user" type="text" />
-					<input id="pass" type="password" />
-					<input id="enter" type="submit" value="Entrar" />
-				</form>
-				<div class="extras">
-					<a href="registro.php">Registrarme</a>
-					<a href="#">Olvide mi Pass</a>
-				</div>
-			</div>
+			<?php 
+				if($_SESSION){
+					echo '<div class="user-container"><div class="user-name">Gonza'/*.$_SESSION['nombre']*/.'</div>';
+					echo '<div class="btn logout">Salir</div>';
+					echo '<div class="btn add-game">Subir Juego!</div></div>';
+				}else{
+					echo '<div class="login">';
+					echo '	<form class="form">';
+					echo '		<input id="user" type="text" />';
+					echo '		<input id="pass" type="password" />';
+					echo '		<input id="enter" type="submit" value="Entrar" />';
+					echo '	</form>';
+					echo '	<div class="extras">';
+					echo '		<a href="registro.php">Registrarme</a>';
+					echo '		<a href="#">Olvide mi Pass</a>';
+					echo '	</div>';
+					echo '</div>';
+				}
+			?>
+			
 		</div>
 	</div>
 </header>
