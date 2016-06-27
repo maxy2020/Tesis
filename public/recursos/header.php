@@ -8,7 +8,7 @@
 			<div class="search"><input type="search" /><button>BUSCAR</button></div>
 			<?php 
 				if($_SESSION){
-					echo '<div class="user-container"><div class="user-name">Gonza'/*.$_SESSION['nombre']*/.'</div>';
+					echo '<div class="user-container"><div class="user-name">'.$_SESSION['name'].'</div>';
 					echo '<div class="btn logout">Salir</div>';
 					echo '<div class="btn add-game">Subir Juego!</div></div>';
 				}else{
