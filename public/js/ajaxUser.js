@@ -72,12 +72,13 @@ function agregarUsuarioDB (user, pass, mail) {
 }
 
 /* loguin user */
-function login () {
+function login (user, pass) {
 	/* igual q agregar objeto con data */
-	var username = 'usuariotest11';
-	var password = 'asdas123333';
+			console.log("asdasd ", user, pass);
+	var username = user;
+	var password = pass;
 	$.ajax({
-		method: "get",
+		method: "POST",
 		url: "../php/requestAccount.php",
 		data: {
 			'user':username,
@@ -87,10 +88,10 @@ function login () {
 			console.log("loader");
 		},
 		success: function($respond) {
-			console.log($respond);
+			console.log("logueo", $respond);
 		},
 		error: function($respond) {
-			console.log("error");
+			console.log("error", $respond);
 		}
 	});
 }

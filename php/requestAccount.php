@@ -33,20 +33,20 @@ elseif($_SERVER['REQUEST_METHOD'] == "POST") {
 						$_SESSION['login']  = 'superadmin';
 					}
 					$_SESSION['iduser'] = $user->getId();
-    				return json_encode(['Login'=>'success']);
+    				echo json_encode(['Login'=>'success']);
 				}
 			}
 			else {				
-				return json_encode(["Login"=>"error"]);
+				echo json_encode(["Login"=>"error"]);
 			}
 		} catch (Exception $e) {
-    		return json_encode(['Login'=>$e->getMessage()]);
+    		echo json_encode(['Login'=>$e->getMessage()]);
 		}
 	}
 	else {
-		return json_encode(["error"=>"error"]);
+		echo json_encode(["error"=>"error1"]);
 	}
 }
 else {	
-	echo json_encode(["error"=>"error"]);
+	echo json_encode(["error"=>"error2"]);
 }

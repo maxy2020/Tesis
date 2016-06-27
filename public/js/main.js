@@ -45,4 +45,13 @@ $(document).ready(function() {
 		}
 
 	});
+	$("header .login .form").on("submit", function (e){
+		e.preventDefault();
+
+		var usuario = $("header .login .form #user");
+		var clave = $("header .login .form #pass");
+
+		login(usuario.val(), clave.val());
+
+	});
 });
