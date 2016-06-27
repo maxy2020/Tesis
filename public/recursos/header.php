@@ -7,11 +7,11 @@
 		<div class="right">
 			<div class="search"><input type="search" /><button>BUSCAR</button></div>
 			<div class="login">
-				<div class="form">
-					<input type="text" />
-					<input type="password" />
-					<input type="submit" value="Entrar" />
-				</div>
+				<form class="form">
+					<input id="user" type="text" />
+					<input id="pass" type="password" />
+					<input id="enter" type="submit" value="Entrar" />
+				</form>
 				<div class="extras">
 					<a href="registro.php">Registrarme</a>
 					<a href="#">Olvide mi Pass</a>
