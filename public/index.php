@@ -15,7 +15,6 @@
 	<body class="home">
 		<?php
 			include("recursos/header.php");
-			require_once ("../php/classes/Videogame.php");
 		?>
 
 
@@ -31,6 +30,7 @@
 						<h2><a href="listado.html">Nuevos Juegos</a></h2>
 						<div class="games">
 							<?php
+								require_once ("../php/classes/Videogame.php");
 
 								$games = Videogame::getGames(6);
 
