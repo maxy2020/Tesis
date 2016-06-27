@@ -26,6 +26,8 @@
 					<input id="email" name="email" type="mail" placeholder="Mail" />
 					<input id="regist" type="submit" value="Crear" />
 				</form>
+				<div class="text-error">Usuario o mail no disponibles</div>
+				<div class="text-success">Usuario creado correctamente!</div>
 			</div>
 		</main>
 

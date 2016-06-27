@@ -52,12 +52,21 @@ function agregarUsuarioDB (user, pass, mail) {
 		},
 		beforeSend: function() {
 			console.log("loader");
+			$(".text-error").removeClass("active");
+			$(".text-success").removeClass("active");
 		},
 		success: function($respond) {
 			console.log($respond);
+			$(".text-success").addClass("active");
+
+			var inputs = $("main .form input");
+			for(var i = 0; i < inputs.length-1; i++){
+				inputs[i].value = "";
+			}
 		},
 		error: function($respond) {
 			console.log("error", $respond);
+			$(".text-error").addClass("active");
 		}
 	});
 }

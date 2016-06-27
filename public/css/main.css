@@ -447,3 +447,30 @@ body.juego main .center .coments .comentar input[type="submit"]:hover{
 	background: #f4f4f4;
 	color: #333;
 }
+body.reg .text-success,
+body.reg .text-error{
+	display: none;
+	font-family: "Comforta";
+	padding: 0 60px;
+    margin: auto;
+    margin-bottom: 40px;
+    width: 400px;
+	color: red;
+    line-height: 30px;
+    border-radius: 5px;
+    text-align: center;
+}
+body.reg .text-success{
+	color: #1bc700;
+    background: rgba(0, 171, 5, 0.12);
+}
+body.reg .text-error{
+    background: rgb(253, 222, 223);
+}
+body.reg .text-success.active,
+body.reg .text-error.active{
+	display: block;
+}
+body.reg input.error{
+	background: rgb(253, 222, 223)!important;
+}
