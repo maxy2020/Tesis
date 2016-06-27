@@ -20,10 +20,10 @@
 				<h2 class="page-title">Registrate:</h2>
 				<form class="form" action="../php/requestUser.php" method="POST">
 					<div class="avatar"></div>
-					<input name="user" type="text" placeholder="Usuario" />
-					<input name="pass" type="password" placeholder="Contraseña" />
-					<input name="repass" type="password" placeholder="Repetir contraseña" />
-					<input name="email" type="mail" placeholder="Mail" />
+					<input id="usuario" name="user" type="text" placeholder="Usuario" />
+					<input id="clave" name="pass" type="password" placeholder="Contraseña" />
+					<input id="clave2" name="repass" type="password" placeholder="Repetir contraseña" />
+					<input id="email" name="email" type="mail" placeholder="Mail" />
 					<input id="regist" type="submit" value="Crear" />
 				</form>
 			</div>

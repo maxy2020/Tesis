@@ -19,7 +19,7 @@
 				<h2 class="page-title">Battlefield 1:</h2>
 				<div class="center">
 					<div class="game">
-						<iframe id="GameFrame" style="width:942px;height:600px;" allowfullscreen="true" msallowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-orientation-lock allow-popups" src="https://games.scirra.net/games/8965/play?utm_source=ScirraWebsite&amp;utm_medium=iFrame&amp;utm_campaign=ScirraArcade&amp;ptoken=adf5fb6c-7007-46f2-8950-b74e300e84e6"></iframe>
+						<iframe src="http://play.avix.tv/cursors3/" frameborder="0" id="GameFrame" style="width:820px; height:514px;" allowfullscreen="true" msallowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-orientation-lock allow-popups" ></iframe>
 					</div>
 					<div class="info">
 						<div class="top">

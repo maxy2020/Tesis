@@ -5,16 +5,10 @@ var usuario = document.getElementById('usuario');
 var clave = document.getElementById('clave');
 var clave2 = document.getElementById('clave2');
 var email = document.getElementById('email');
-var nombre = document.getElementById('nombre');
-var apellido = document.getElementById('apellido');
 
-
-
-var nombreRE = /^[a-z]+$/i
-var emailRE = /^([a-z0-9\.\-_]{3,}@[a-z0-9]{3,}(\.[a-z]{2,4}){1,2})$/i;
-var usuarioRE = /^([A-Za-z0-9.\-_]{3,16})$/;
-var claveRE = /^([a-z0-9!\$%&\/\(\)\?¡¿.\-_\,\+\*]{3,15})$/i;
-
+var emailRE = /^([a-z0-9\.\-_]{1,}@[a-z0-9]{1,}(\.[a-z0-9]{2,7}){1,4})$/i;
+var usuarioRE = /^([A-Za-z0-9.\-_]{4,45})$/;
+var claveRE = /^([a-z0-9!\$%&\/\(\)\?¡¿.\-_\,\+\*]{6,15})$/i;
 
 form.onsubmit = function() {
 	var rta = true;
@@ -44,15 +38,6 @@ form.onsubmit = function() {
 		rta = false;
 		email.classList.add("error");
 	}
-	if( !nombreRE.test(nombre.value) ){
-		rta = false;
-		nombre.classList.add("error");
-	}
-	if( !nombreRE.test(apellido.value) ){
-		rta = false;
-		apellido.classList.add("error");
-	}
-
 
 	return rta;
 }

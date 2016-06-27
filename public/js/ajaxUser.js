@@ -37,11 +37,11 @@ function usuarioPorId (id) {
 }
 
 /* user Add */
-function agregarUsuarioDB () {
+function agregarUsuarioDB (user, pass, mail) {
 	/* en realidad tiene q recibir un objeto ya con los data */
-	var username = 'usuari233otest123123gf12hgf';
-	var password = 'asdas123';
-	var email = 'as234ddw2sa@asdasasdsadss.com';
+	var username = user;
+	var password = pass;
+	var email = mail;
 	$.ajax({
 		method: "POST",
 		url: "../php/requestUser.php",
