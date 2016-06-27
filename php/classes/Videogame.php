@@ -14,7 +14,7 @@ class Videogame
 	private $status;
 	private static $table = "videogame";
  
-	public function __construct($title, $link, $iduser,$id=NULL, $date=NULL, $descrip=NULL, $avatar="img/juegos/empty.jpg", $status=1)
+	public function __construct($title, $link, $iduser,$id=NULL, $date=NULL, $descrip=NULL, $avatar="img/juegos/default.jpg", $status=1)
 	{
 			$this->setId($id);
 			$this->setTitle($title);
@@ -143,5 +143,19 @@ class Videogame
 
 			return $games;
 		}
+	}
+
+	static public function getGame($id)
+	{
+		$query = "SELECT * FROM " . static::$table . " WHERE idvideogame=?";
+
+		$stmt = DBConnection::getStatement($query);
+
+		if($stmt->execute([$id])) {
+			if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+				return $row;
+			}			
+		}
+
 	}
 }
