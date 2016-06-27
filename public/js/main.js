@@ -53,7 +53,7 @@ $(document).ready(function() {
 
 		login(usuario.val(), clave.val());
 	});
-	$("header .right .user-container .btn.logout").on("click", function (){
+	$("header .right .user-container .bttn.logout").on("click", function (){
 		logout();
 	});
 });

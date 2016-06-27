@@ -42,8 +42,9 @@ header{
 }
 header h1{
 	display: inline-block;
+	margin: 0;
 }
-header .menu .btn a{
+header .menu .bttn a{
 	color: #FFF;
 	text-decoration: none;
 }
@@ -201,11 +202,14 @@ header .right .user-container *{
 }
 header .right .user-container .user-name{
 	font-weight: 600;
+	text-decoration: none;
+	color: #000;
+	font-size: 16px;
 }
 header .right .user-container .user-name::first-letter{
 	text-transform: uppercase;
 }
-header .right .user-container .btn{
+header .right .user-container .bttn{
 	border: 2px solid #333;
 	line-height: 25px;
 	outline: none;
@@ -217,11 +221,11 @@ header .right .user-container .btn{
 	cursor: pointer;
 	transition: .2s;
 }
-header .right .user-container .btn:hover{
+header .right .user-container .bttn:hover{
 	background: #333;
 	color: #565656;
 }
-header .right .user-container .btn{
+header .right .user-container .bttn{
 	text-decoration: none;
 	color: #000;
 }
@@ -531,4 +535,8 @@ body.reg .text-error.active{
 }
 body.reg input.error{
 	background: rgb(253, 222, 223)!important;
+}
+body.mis-juego table{
+	width: 90%;
+	margin: auto;
 }
