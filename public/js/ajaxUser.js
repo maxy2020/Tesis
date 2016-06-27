@@ -88,6 +88,7 @@ function login (user, pass) {
 		},
 		success: function($respond) {
 			console.log("logueo", $respond);
+			location.reload();
 		},
 		error: function($respond) {
 			console.log("error", $respond);
@@ -109,6 +110,7 @@ function logout () {
 		},
 		success: function($respond) {
 			console.log($respond);
+			location.reload();
 		},
 		error: function() {
 			console.log("error");
