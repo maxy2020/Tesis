@@ -2,26 +2,26 @@
 
 require_once "DBConnection.php";
 
-class User
+class Videogame
 {
 	private $id;
 	private $title;
 	private $descrip;
 	private $date;
 	private $avatar;
-	private $url;
+	private $link;
 	private $iduser;
 	private $status;
 	private static $table = "videogame";
  
-	public function __construct($title, $user, $pass, $id=NULL, $name=NULL, $lname=NULL, $experience=0, $level=0, $date=NULL, $birthday=NULL, $hig=0, $avatar="img/juegos/empty.jpg", $status=1)
+	public function __construct($title, $link, $iduser,$id=NULL, $date=NULL, $descrip=NULL, $avatar="img/juegos/empty.jpg", $status=1)
 	{
 			$this->setId($id);
 			$this->setTitle($title);
 			$this->setDate($date);
 			$this->setDescrip($descrip);
 			$this->setAvatar($avatar);
-			$this->setUrl($table);
+			$this->setLink($link);
 			$this->setStatus($status);
 			$this->setIduser($iduser);
 	}
@@ -76,14 +76,14 @@ class User
 		return $this->avatar;
 	}
 
-	public static function setUrl($url)
+	public static function setLink($link)
 	{
-		self::$url = $url;
+		$this->link = $link;
 	}
 
-	public static function getUrl()
+	public static function getLink()
 	{
-		return self::$url;
+		return $this->link;
 	}
 
 	public function setStatus($status)
@@ -106,4 +106,42 @@ class User
 		return $this->iduser;
 	}
 
+	static private function arrayToObject($arr)
+	{
+		return new Videogame($arr['title'],$arr['url'],$arr['user_iduser'],$arr['idvideogame'],$arr['date'],$arr['description'],$arr['avatar'],$arr['status']);		
+	}
 
+	static public function getGames($amount=NULL)
+	{
+		if(IS_NULL($amount)){
+			$query = "SELECT * FROM " . static::$table;
+
+			$stmt = DBConnection::getStatement($query);
+
+			$games = [];
+
+			if($stmt->execute()) {
+				while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+					$games[] = $row;
+				}			
+			}
+
+			return $games;
+		}
+		else {
+			$query = "SELECT * FROM " . static::$table ." LIMIT " . $amount;
+
+			$stmt = DBConnection::getStatement($query);
+
+			$games = [];
+
+			if($stmt->execute()) {
+				while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+					$games[] = $row;
+				}			
+			}
+
+			return $games;
+		}
+	}
+}

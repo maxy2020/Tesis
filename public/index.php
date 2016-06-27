@@ -12,6 +12,7 @@
 	<body class="home">
 		<?php
 			include("recursos/header.php");
+			require_once ("../php/classes/Videogame.php");
 		?>
 
 
@@ -26,30 +27,17 @@
 					<div class="items new-games">
 						<h2><a href="listado.html">Nuevos Juegos</a></h2>
 						<div class="games">
-							<a href="juego.php" class="game">
-								<img src="img/juego.jpg" alt="Un Juego" />
-								<div class="title">Battlefield 1</div>
-							</a>
-							<a href="juego.php" class="game">
-								<img src="img/juego.jpg" alt="Un Juego" />
-								<div class="title">Battlefield 1</div>
-							</a>
-							<a href="juego.php" class="game">
-								<img src="img/juego.jpg" alt="Un Juego" />
-								<div class="title">Battlefield 1</div>
-							</a>
-							<a href="juego.php" class="game">
-								<img src="img/juego.jpg" alt="Un Juego" />
-								<div class="title">Battlefield 1</div>
-							</a>
-							<a href="juego.php" class="game">
-								<img src="img/juego.jpg" alt="Un Juego" />
-								<div class="title">Battlefield 1</div>
-							</a>
-							<a href="juego.php" class="game">
-								<img src="img/juego.jpg" alt="Un Juego" />
-								<div class="title">Battlefield 1</div>
-							</a>
+							<?php
+
+								$games = Videogame::getGames(6);
+
+								foreach ($games as $game) {
+									echo '<a href="juego.php?id='.$game["idvideogame"].'" class="game">';
+									echo '	<img src="'.$game["avatar"].'" alt="'.$game["title"].'" />';
+									echo '	<div class="title">'.$game["title"].'</div>';
+									echo '</a>';
+								}
+							?>
 						</div>
 					</div>
 				</div>
