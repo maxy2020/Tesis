@@ -76,12 +76,12 @@ class Videogame
 		return $this->avatar;
 	}
 
-	public static function setLink($link)
+	public function setLink($link)
 	{
 		$this->link = $link;
 	}
 
-	public static function getLink()
+	public function getLink()
 	{
 		return $this->link;
 	}
@@ -157,5 +157,20 @@ class Videogame
 			}			
 		}
 
+	}
+
+	public function addNew()
+	{
+		$query = "INSERT INTO " . static::$table . " (title,description,status,url,avatar,user_iduser) VALUES (:title,:description,1,:url,:avatar,:user_iduser)";
+
+		$stmt = DBConnection::getStatement($query);
+
+		return $stmt->execute([
+			":title" => $this->title,
+			":description" => $this->descrip,
+			":url" => $this->link,
+			":avatar" => $this->avatar,
+			":user_iduser" => $this->iduser
+		]);
 	}
 }
