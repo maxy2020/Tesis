@@ -149,6 +149,20 @@ header .right .search button:hover{
 	background: #333;
 	color: #565656;
 }
+header ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #848484;
+}
+header :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #848484;
+   opacity:  1;
+}
+header ::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #848484;
+   opacity:  1;
+}
+header :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #848484;
+}
 header .right .login input:not([type="submit"]){
 	border: 0;
 	border-bottom: 2px solid #333;
@@ -178,8 +192,18 @@ header .right .login input[type="submit"]:hover{
 	color: #565656;
 }
 
+header .right .user-container{
+	text-align: right;
+}
 header .right .user-container *{
 	display: inline-block;
+	margin-left: 10px;
+}
+header .right .user-container .user-name{
+	font-weight: 600;
+}
+header .right .user-container .user-name::first-letter{
+	text-transform: uppercase;
 }
 header .right .user-container .btn{
 	border: 2px solid #333;
@@ -196,6 +220,10 @@ header .right .user-container .btn{
 header .right .user-container .btn:hover{
 	background: #333;
 	color: #565656;
+}
+header .right .user-container .btn{
+	text-decoration: none;
+	color: #000;
 }
 
 header .right .login .extras,
@@ -338,6 +366,7 @@ body.reg main .wrapper-center .form *{
 	display: block;
 	margin: auto;
 }
+body.reg main .wrapper-center .form textarea,
 body.reg main .wrapper-center .form input:not([type="submit"]){
 	border: 0;
 	border-bottom: 2px solid #333;
@@ -348,6 +377,13 @@ body.reg main .wrapper-center .form input:not([type="submit"]){
 	background: #fff;
 	box-sizing: border-box;
 	width: 300px;
+}
+body.reg.alta-juego main .wrapper-center .form textarea,
+body.reg.alta-juego main .wrapper-center .form input:not([type="submit"]){
+	width: 600px;
+}
+body.reg.alta-juego main .wrapper-center .form textarea{
+	resize: none;
 }
 body.reg main .wrapper-center .form input[type="submit"]{
 	border: 2px solid #333;

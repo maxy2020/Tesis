@@ -10,12 +10,12 @@
 				if($_SESSION){
 					echo '<div class="user-container"><div class="user-name">'.$_SESSION['name'].'</div>';
 					echo '<div class="btn logout">Salir</div>';
-					echo '<div class="btn add-game">Subir Juego!</div></div>';
+					echo '<a href="nuevo-juego.php" class="btn add-game">Subir Juego!</a></div>';
 				}else{
 					echo '<div class="login">';
 					echo '	<form class="form">';
-					echo '		<input id="user" type="text" />';
-					echo '		<input id="pass" type="password" />';
+					echo '		<input id="user" type="text" placeholder="Usuario"/>';
+					echo '		<input id="pass" type="password" placeholder="Contraseña"/>';
 					echo '		<input id="enter" type="submit" value="Entrar" />';
 					echo '	</form>';
 					echo '	<div class="extras">';
