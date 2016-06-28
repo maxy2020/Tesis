@@ -27,6 +27,7 @@
 				<h2 class="page-title">Editar Juego:</h2>
 				<form class="form" action="../php/requestUser.php" method="POST">
 					<input id="nombre" name="nombre" type="text" placeholder="Nombre" value="<?php echo $game['title'];?>" />
+					<input id="idjuego" name="idjuego" type="hidden" value="<?php echo $game['idvideogame'];?>" />
 					<input id="url" name="url" type="text" placeholder="URL" value="<?php echo $game['url'];?>"/>
 					<textarea id="descripcion" name="desc" rows="6" placeholder="Descripción"><?php echo $game['description'];?></textarea>
 					<input id="regist" type="submit" value="Publicar" />
