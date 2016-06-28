@@ -38,7 +38,7 @@
 				            echo '    <td><img src="'.$game['avatar'].'" alt="'.$game['title'].'"></td>';
 				            echo '    <td>'.$game['title'].'</td>';
 				            echo '    <td><a href="editar-juego.php?id='.$game['idvideogame'].'" class="bttn edit">EDITAR</a></td>';
-				            echo '    <td><a href="javascript:void(0)" class="bttn delete">BORRAR</a></td>';
+				            echo '    <td><a href="javascript:void(0)" class="bttn delete" data-id="'.$game['idvideogame'].'" >BORRAR</a></td>';
 				            echo '</tr>';
 				        }
 			        ?>
