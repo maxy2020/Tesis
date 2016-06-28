@@ -11,10 +11,11 @@
 		<script src="js/jquery-2.2.1.min.js"></script>
 		<!--script src="js/form-register.js"></script-->
 		<script src="js/ajaxUser.js"></script>
+		<script src="js/ajaxGame.js"></script>
 		<script src="js/main.js"></script>
 		<title>Indie Games</title>
 	</head>
-	<body class="reg alta-juego">
+	<body class="reg alta-juego editar">
 		<?php
 			include("recursos/header.php");
 			require_once ("../php/classes/Videogame.php");
@@ -26,9 +27,9 @@
 			<div class="wrapper-center">
 				<h2 class="page-title">Editar Juego:</h2>
 				<form class="form" action="../php/requestUser.php" method="POST">
-					<input id="nombre" name="nombre" type="text" placeholder="Nombre" value="<?php echo $game['title'];?>" />
+					<input id="nombre" name="nombre" type="text" placeholder="Nombre" value="<?php echo $game['title'];?>" required/>
 					<input id="idjuego" name="idjuego" type="hidden" value="<?php echo $game['idvideogame'];?>" />
-					<input id="url" name="url" type="text" placeholder="URL" value="<?php echo $game['url'];?>"/>
+					<input id="url" name="url" type="text" placeholder="URL" value="<?php echo $game['url'];?>" required/>
 					<textarea id="descripcion" name="desc" rows="6" placeholder="Descripción"><?php echo $game['description'];?></textarea>
 					<input id="regist" type="submit" value="Publicar" />
 				</form>

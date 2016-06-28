@@ -1,5 +1,4 @@
-function eliminarJuego () {		
-	var id = 5;
+function eliminarJuego (id) {
 	$.ajax({
 		method: "GET",
 		url: "../php/requestGame.php",
@@ -11,6 +10,7 @@ function eliminarJuego () {
 		},
 		success: function($respond) {
 			console.log($respond);
+			window.location.href = "mis-juegos.php";
 		},
 		error: function() {
 			console.log("error");
@@ -43,11 +43,7 @@ function agregarJuego (title, url, desc) {
 	});
 }
 
-function editarJuego () {
-	var id = 1;
-	var title = "Explotar globoss";
-	var desc = "Romper globos a muchaaaaa velocidad.";
-	var url = "http://play.avix.tv/pinchar/";
+function editarJuego (title, url, desc, id) {
 	$.ajax({
 		method: "POST",
 		url: "../php/requestGame.php",
@@ -62,6 +58,7 @@ function editarJuego () {
 		},
 		success: function($respond) {
 			console.log($respond);
+			window.location.href = "mis-juegos.php";
 		},
 		error: function() {
 			console.log("error");

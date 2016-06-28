@@ -12,6 +12,7 @@
 		<script src="js/jquery-2.2.1.min.js"></script>
 		<!--script src="js/form-register.js"></script-->
 		<script src="js/ajaxUser.js"></script>
+		<script src="js/ajaxGame.js"></script>
 		<script src="js/main.js"></script>
 		<title>Indie Games</title>
 	</head>

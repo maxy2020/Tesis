@@ -56,7 +56,7 @@ $(document).ready(function() {
 	$("header .right .user-container .bttn.logout").on("click", function (){
 		logout();
 	});
-	$("body.reg.alta-juego main .form").on("submit", function (e){
+	$("body.reg.alta-juego:not(.editar) main .form").on("submit", function (e){
 		e.preventDefault();
 
 		var name = $("body.reg.alta-juego main .form #nombre");
@@ -64,5 +64,20 @@ $(document).ready(function() {
 		var desc = $("body.reg.alta-juego main .form #descripcion");
 
 		agregarJuego(name.val(), url.val(), desc.val());
+	});
+	$("body.reg.alta-juego.editar main .form").on("submit", function (e){
+		e.preventDefault();
+
+		var name = $("body.reg.alta-juego main .form #nombre");
+		var url = $("body.reg.alta-juego main .form #url");
+		var idGame = $("body.reg.alta-juego main .form #idjuego");
+		var desc = $("body.reg.alta-juego main .form #descripcion");
+
+		editarJuego(name.val(), url.val(), desc.val(), idGame.val());
+	});
+	$("body.mis-juego table .bttn.delete").on("click", function (){
+		var idGame = $(this).data("id");
+
+		eliminarJuego(idGame);
 	});
 });
