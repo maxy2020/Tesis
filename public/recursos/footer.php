@@ -2,7 +2,7 @@
 		<div class="top">
 			<div class="center">
 				<div class="left">
-					<div class="container">
+					<div class="container-tabs">
 						<h3>Información:</h3>
 						<ul>
 							<li><a href="#">Terminos y Condiciones</a></li>
@@ -12,17 +12,17 @@
 							<li><a href="#">Contactenos</a></li>
 						</ul>
 					</div>
-					<div class="container">
+					<div class="container-tabs">
 						<h3>Páginas Aliadas:</h3>
 						<ul>
-							<li><a href="#">minijuegos.com</a></li>
-							<li><a href="#">avix.tv</a></li>
-							<li><a href="#">kongregate.com</a></li>
+							<li><a href="http://www.minijuegos.com/">minijuegos.com</a></li>
+							<li><a href="http://www.kongregate.com/">kongregate.com</a></li>
+							<li><a href="http://avix.tv/">avix.tv</a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="right">
-					<div class="container">
+					<div class="container-tabs">
 						<h3>Seguinos en:</h3>
 						<ul>
 							<li><a href="https://www.facebook.com/indiegames7">Facebook</a></li>

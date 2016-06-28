@@ -11,6 +11,7 @@
 		<script src="js/jquery-2.2.1.min.js"></script>
 		<!--script src="js/form-register.js"></script-->
 		<script src="js/ajaxUser.js"></script>
+		<script src="js/ajaxGame.js"></script>
 		<script src="js/main.js"></script>
 		<title>Indie Games</title>
 	</head>
@@ -23,8 +24,8 @@
 			<div class="wrapper-center">
 				<h2 class="page-title">Subir Juego:</h2>
 				<form class="form" action="../php/requestUser.php" method="POST">
-					<input id="nombre" name="nombre" type="text" placeholder="Nombre" />
-					<input id="url" name="url" type="text" placeholder="URL" />
+					<input id="nombre" name="nombre" type="text" placeholder="Nombre" required/>
+					<input id="url" name="url" type="text" placeholder="URL" required/>
 					<textarea id="descripcion" name="desc" rows="6" placeholder="Descripción"></textarea>
 					<input id="regist" type="submit" value="Publicar" />
 				</form>

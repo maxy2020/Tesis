@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$(".reg .form").on("submit", function (e){
+	$(".reg:not(.alta-juego) .form").on("submit", function (e){
 		e.preventDefault();
 		
 		var inputs = $("input");
@@ -55,5 +55,14 @@ $(document).ready(function() {
 	});
 	$("header .right .user-container .bttn.logout").on("click", function (){
 		logout();
+	});
+	$("body.reg.alta-juego main .form").on("submit", function (e){
+		e.preventDefault();
+
+		var name = $("body.reg.alta-juego main .form #nombre");
+		var url = $("body.reg.alta-juego main .form #url");
+		var desc = $("body.reg.alta-juego main .form #descripcion");
+
+		agregarJuego(name.val(), url.val(), desc.val());
 	});
 });

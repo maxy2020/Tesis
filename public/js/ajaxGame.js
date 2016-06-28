@@ -18,10 +18,7 @@ function eliminarJuego () {
 	});
 }
 
-function agregarJuego () {
-	var title = "Explotar globos";
-	var desc = "Romper globos a mucha velocidad.";
-	var url = "http://play.avix.tv/pinchar/";
+function agregarJuego (title, url, desc) {
 	$.ajax({
 		method: "POST",
 		url: "../php/requestGame.php",
@@ -35,6 +32,10 @@ function agregarJuego () {
 		},
 		success: function($respond) {
 			console.log($respond);
+			$("body.reg.alta-juego main .form #nombre").val("");
+			$("body.reg.alta-juego main .form #url").val("");
+			$("body.reg.alta-juego main .form #descripcion").val("");
+			$("body.reg.alta-juego main .text-success").addClass("active");
 		},
 		error: function() {
 			console.log("error");

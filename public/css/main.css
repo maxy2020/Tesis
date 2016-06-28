@@ -266,13 +266,13 @@ footer .top h3{
 	margin-bottom: 15px;
 	color: #e6e6e6;
 }
-footer .top .container,
+footer .top .container-tabs,
 footer .top .right,
 footer .top .left{
 	display: inline-block;
 	vertical-align: top;
 }
-footer .top .container{
+footer .top .container-tabs{
 	margin-right: 50px;
 }
 footer .top .right{
