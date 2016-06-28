@@ -546,3 +546,43 @@ body.mis-juego table{
 	width: 90%;
 	margin: auto;
 }
+body.mis-juego table .th-img{
+	width: 285px;
+}
+body.mis-juego table th{
+	font-weight: 600;
+}
+body.mis-juego table th.actions{
+	text-align: center;
+}
+body.mis-juego table td.ed,
+body.mis-juego table td.del{
+	text-align: center;
+}
+body.mis-juego table td.ed,
+body.mis-juego table td.del,
+body.mis-juego table .td-name{
+	vertical-align: middle;
+}
+body.mis-juego table td.ed a{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	text-indent: -1000px;
+	overflow: hidden;
+	background: url("../img/editar.png") center no-repeat;
+}
+body.mis-juego table td.ed a:hover{
+	opacity: .6;
+}
+body.mis-juego table td.del a{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	text-indent: -1000px;
+	overflow: hidden;
+	background: url("../img/borrar.png") center no-repeat;
+}
+body.mis-juego table td.del a:hover{
+	opacity: .6;
+}

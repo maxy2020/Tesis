@@ -8,7 +8,6 @@
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="shortcut icon" href="img/favicon.png" />
 		<script src="js/jquery-2.2.1.min.js"></script>
-		<!--script src="js/form-register.js"></script-->
 		<script src="js/ajaxUser.js"></script>
 		<script src="js/main.js"></script>
 		<title>Indie Games</title>

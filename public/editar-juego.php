@@ -9,7 +9,6 @@
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="shortcut icon" href="img/favicon.png" />
 		<script src="js/jquery-2.2.1.min.js"></script>
-		<!--script src="js/form-register.js"></script-->
 		<script src="js/ajaxUser.js"></script>
 		<script src="js/ajaxGame.js"></script>
 		<script src="js/main.js"></script>
@@ -31,7 +30,7 @@
 					<input id="idjuego" name="idjuego" type="hidden" value="<?php echo $game['idvideogame'];?>" />
 					<input id="url" name="url" type="text" placeholder="URL" value="<?php echo $game['url'];?>" required/>
 					<textarea id="descripcion" name="desc" rows="6" placeholder="Descripción"><?php echo $game['description'];?></textarea>
-					<input id="regist" type="submit" value="Publicar" />
+					<input id="regist" type="submit" value="Editar" />
 				</form>
 				<div class="text-error">Usuario o mail no disponibles</div>
 				<div class="text-success">Juego publicado correctamente!</div>
