@@ -18,6 +18,8 @@
 	<body class="mis-juego">
 		<?php
 			include("recursos/header.php");
+			require_once ("../php/classes/Videogame.php");
+			$games = Videogame::getGamesUser($_SESSION['iduser']);
 		?>
 
 		<main>
@@ -30,12 +32,16 @@
 			            <th class="actions">Editar</th>
 			            <th class="actions">Borrar</th>
 			        </tr>
-		            <tr>
-		                <td>img</td>
-		                <td>TitanFall</td>
-		                <td><a href="" class="bttn edit"></a></td>
-		                <td><a href="" class="bttn delete"></a></td>
-		            </tr>
+			        <?php
+			        	foreach ($games as $game) {
+				            echo '<tr>';
+				            echo '    <td><img src="'.$game['avatar'].'" alt="'.$game['title'].'"></td>';
+				            echo '    <td>'.$game['title'].'</td>';
+				            echo '    <td><a href="editar-juego.php?'.$game['idvideogame'].'" class="bttn edit">EDITAR</a></td>';
+				            echo '    <td><a href="javascript:void(0)" class="bttn delete">BORRAR</a></td>';
+				            echo '</tr>';
+				        }
+			        ?>
 			    </table>
 			</div>
 		</main>

@@ -159,6 +159,23 @@ class Videogame
 
 	}
 
+	static public function getGamesUser($id)
+	{
+		$query = "SELECT * FROM " . static::$table . " WHERE user_iduser=?";
+
+			$stmt = DBConnection::getStatement($query);
+
+			$games = [];
+
+			if($stmt->execute([$id])) {
+				while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+					$games[] = $row;
+				}			
+			}
+
+			return $games;
+	}
+
 	static public function getGameObject($id)
 	{
 		$query = "SELECT * FROM " . static::$table . " WHERE idvideogame=?";
