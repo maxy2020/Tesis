@@ -25,9 +25,9 @@
 					<div class="container">
 						<h3>Seguinos en:</h3>
 						<ul>
-							<li><a href="#">Facebook</a></li>
-							<li><a href="#">twitter</a></li>
-							<li><a href="#">Youtube</a></li>
+							<li><a href="https://www.facebook.com/indiegames7">Facebook</a></li>
+							<li><a href="https://twitter.com/IndieGames5">twitter</a></li>
+							<li><a href="https://www.youtube.com/?gl=ES&amp;hl=es">Youtube</a></li>
 						</ul>
 					</div>
 				</div>

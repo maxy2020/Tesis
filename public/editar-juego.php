@@ -6,7 +6,6 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="shortcut icon" href="img/favicon.png" />
 		<script src="js/jquery-2.2.1.min.js"></script>
@@ -15,28 +14,22 @@
 		<script src="js/main.js"></script>
 		<title>Indie Games</title>
 	</head>
-	<body class="mis-juego">
+	<body class="reg alta-juego">
 		<?php
 			include("recursos/header.php");
 		?>
 
 		<main>
 			<div class="wrapper-center">
-				<h2 class="page-title">Mis juegos:</h2>
-				<table class="table table-bordered table-striped">
-			        <tr>
-			            <th>Imagen</th>
-			            <th>Nombre</th>
-			            <th class="actions">Editar</th>
-			            <th class="actions">Borrar</th>
-			        </tr>
-		            <tr>
-		                <td>img</td>
-		                <td>TitanFall</td>
-		                <td><a href="" class="bttn edit"></a></td>
-		                <td><a href="" class="bttn delete"></a></td>
-		            </tr>
-			    </table>
+				<h2 class="page-title">Editar Juego:</h2>
+				<form class="form" action="../php/requestUser.php" method="POST">
+					<input id="nombre" name="nombre" type="text" placeholder="Nombre" />
+					<input id="url" name="url" type="text" placeholder="URL" />
+					<textarea id="descripcion" name="desc" rows="6" placeholder="Descripción"></textarea>
+					<input id="regist" type="submit" value="Publicar" />
+				</form>
+				<div class="text-error">Usuario o mail no disponibles</div>
+				<div class="text-success">Juego publicado correctamente!</div>
 			</div>
 		</main>
 

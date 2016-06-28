@@ -125,17 +125,17 @@ header .right .search{
 }
 header .right .search input{
 	border: 0;
-	border-bottom: 2px solid #333;
+	border-bottom: 2px solid #bfbfbf;
 	margin-right: 5px;
 	line-height: 25px;
 	outline: none;
 	padding-left: 5px;
-	background: #9e9e9e;
+	background: #6b6b6b;
 	box-sizing: border-box;
 	width: 417px;
 }
 header .right .search button{
-	border: 2px solid #333;
+	border: 2px solid #bfbfbf;
 	line-height: 25px;
 	outline: none;
 	padding: 0 15px;
@@ -144,39 +144,41 @@ header .right .search button{
 	font-weight: 600;
 	letter-spacing: 1px;
 	cursor: pointer;
+	color: #bfbfbf;
 }
 header .right .search button:hover{
 	outline: none;
-	background: #333;
+	background: #bfbfbf;
 	color: #565656;
 }
 header ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    #848484;
+    color:    #9e9e9e;
 }
 header :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    #848484;
+   color:    #9e9e9e;
    opacity:  1;
 }
 header ::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    #848484;
+   color:    #9e9e9e;
    opacity:  1;
 }
 header :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color:    #848484;
+   color:    #9e9e9e;
 }
 header .right .login input:not([type="submit"]){
 	border: 0;
-	border-bottom: 2px solid #333;
+	border-bottom: 2px solid #bfbfbf;
 	margin-right: 5px;
 	line-height: 25px;
 	outline: none;
 	padding-left: 5px;
-	background: #9e9e9e;
+	background: #6b6b6b;
 	box-sizing: border-box;
 	width: 150px;
+	color: #f4f4f4;
 }
 header .right .login input[type="submit"]{
-	border: 2px solid #333;
+	border: 2px solid #bfbfbf;
 	line-height: 25px;
 	outline: none;
 	padding: 0 10px;
@@ -186,10 +188,11 @@ header .right .login input[type="submit"]{
 	letter-spacing: 1px;
 	cursor: pointer;
 	transition: .2s;
+	color: #bfbfbf;
 }
 header .right .login input[type="submit"]:hover{
 	outline: none;
-	background: #333;
+	background: #bfbfbf;
 	color: #565656;
 }
 
@@ -203,14 +206,14 @@ header .right .user-container *{
 header .right .user-container .user-name{
 	font-weight: 600;
 	text-decoration: none;
-	color: #000;
+	color: #bfbfbf;
 	font-size: 16px;
 }
 header .right .user-container .user-name::first-letter{
 	text-transform: uppercase;
 }
 header .right .user-container .bttn{
-	border: 2px solid #333;
+	border: 2px solid #bfbfbf;
 	line-height: 25px;
 	outline: none;
 	padding: 0 10px;
@@ -222,12 +225,12 @@ header .right .user-container .bttn{
 	transition: .2s;
 }
 header .right .user-container .bttn:hover{
-	background: #333;
+	background: #bfbfbf;
 	color: #565656;
 }
 header .right .user-container .bttn{
 	text-decoration: none;
-	color: #000;
+	color: #bfbfbf;
 }
 
 header .right .login .extras,
@@ -261,7 +264,7 @@ footer .top{
 }
 footer .top h3{
 	margin-bottom: 15px;
-	color: #333;
+	color: #e6e6e6;
 }
 footer .top .container,
 footer .top .right,
@@ -281,7 +284,10 @@ footer .top li{
 }
 footer .top a{
 	text-decoration: none;
-	color: #f4f4f4;
+	color: #b5b4b4;
+}
+footer .top a:hover{
+	opacity: .6;
 }
 footer .bottom{
 	line-height: 40px;
