@@ -159,6 +159,23 @@ class Videogame
 
 	}
 
+	static public function getGameObject($id)
+	{
+		$query = "SELECT * FROM " . static::$table . " WHERE idvideogame=?";
+
+		$stmt = DBConnection::getStatement($query);
+
+		if($stmt->execute([$id])) {
+			if($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+				return static::arrayToObject($row);
+			}			
+		}
+		else {
+			return false;
+		}
+
+	}
+
 	public function addNew()
 	{
 		$query = "INSERT INTO " . static::$table . " (title,description,status,url,avatar,user_iduser) VALUES (:title,:description,1,:url,:avatar,:user_iduser)";

@@ -12,8 +12,8 @@ if($_SERVER['REQUEST_METHOD'] == "GET") {
 	if(isset($_GET['id']) && is_int(intval($_GET['id']))){
 		try {
 			echo json_encode(Videogame::removeById($_GET['id']));
-		} catch {
-			echo json_encode(["error"=>"error"]);			
+		} catch (Exception $e) {
+    		echo json_encode(['error'=>$e->getMessage()]);
 		}
 	}
 	else {
@@ -24,21 +24,22 @@ elseif($_SERVER['REQUEST_METHOD'] == "POST") {
 	if(isset($_POST['id']) && is_int(intval($_POST['id']))){
 		if( isset($_POST['title']) && isset($_POST['desc']) && isset($_POST['url']) && isset($_POST['avatar']) ){
 			try{
-				$game = Videogame::getGame();
-				$game->setTitle($_POST['title']);
+				$game = Videogame::getGameObject($_POST['id']);
+				echo json_encode(get_object_vars ($game));
+				/*$game->setTitle($_POST['title']);
 				$game->setDescrip($_POST['desc']);
 				$game->setAvatar($_POST['avatar']);
 				$game->setLink($_POST['url']);
-				echo json_encode($game->editGame());
-			} catch {
-				echo json_encode(["error"=>"error"]);				
+				/*echo json_encode($game->editGame());*/
+			} catch (Exception $e) {
+    			echo json_encode(['error'=>$e->getMessage()]);
 			}
 		}
 		else {
 			echo json_encode(["error"=>"error"]);
 		}
 	}
-	elseif ( isset($_POST['title']) && isset($_POST['desc']) && isset($_POST['url']) && isset($_POST['avatar']) && isset($_SESSION['iduser']) ) {
+	elseif ( isset($_POST['title']) && isset($_POST['desc']) && isset($_POST['url']) && isset($_SESSION['iduser']) ) {
 		$game = new Videogame($_POST['title'], $_POST['url'], $_SESSION['iduser'], $_POST['desc']);
 		echo json_encode($game->addNew());
 	}
@@ -47,6 +48,5 @@ elseif($_SERVER['REQUEST_METHOD'] == "POST") {
 	}
 }
 else {	
-	header("Location: index.php");
-	exit;
+	echo json_encode(["error"=>"error"]);
 }
