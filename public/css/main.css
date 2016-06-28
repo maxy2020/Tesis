@@ -133,6 +133,7 @@ header .right .search input{
 	background: #6b6b6b;
 	box-sizing: border-box;
 	width: 417px;
+	color: #f4f4f4;
 }
 header .right .search button{
 	border: 2px solid #bfbfbf;
