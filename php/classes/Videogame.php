@@ -193,7 +193,7 @@ class Videogame
 
 	public function editGame()
 	{
-		$query = "UPDATE " . static::$table . " SET title=:title,description=:description,url=:url,avatar=:avatar WHERE id=:id";
+		$query = "UPDATE " . static::$table . " SET title=:title,description=:description,url=:url,avatar=:avatar WHERE idvideogame=:id";
 
 		$stmt = DBConnection::getStatement($query);
 

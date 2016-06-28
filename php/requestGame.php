@@ -25,12 +25,11 @@ elseif($_SERVER['REQUEST_METHOD'] == "POST") {
 		if( isset($_POST['title']) && isset($_POST['desc']) && isset($_POST['url']) && isset($_POST['avatar']) ){
 			try{
 				$game = Videogame::getGameObject($_POST['id']);
-				echo json_encode(get_object_vars ($game));
-				/*$game->setTitle($_POST['title']);
+				$game->setTitle($_POST['title']);
 				$game->setDescrip($_POST['desc']);
 				$game->setAvatar($_POST['avatar']);
 				$game->setLink($_POST['url']);
-				/*echo json_encode($game->editGame());*/
+				echo json_encode($game->editGame());
 			} catch (Exception $e) {
     			echo json_encode(['error'=>$e->getMessage()]);
 			}

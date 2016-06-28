@@ -1,5 +1,5 @@
 function eliminarJuego () {		
-	var id = 4;
+	var id = 5;
 	$.ajax({
 		method: "GET",
 		url: "../requestGame.php",
@@ -45,7 +45,7 @@ function agregarJuego () {
 function editarJuego () {
 	var id = 1;
 	var title = "Explotar globoss";
-	var desc = "Romper globos a mucha velocidad.";
+	var desc = "Romper globos a muchaaaaa velocidad.";
 	var url = "http://play.avix.tv/pinchar/";
 	var avatar = "img/juegos/default.jpg";
 	$.ajax({
@@ -71,8 +71,8 @@ function editarJuego () {
 }
 
 
-editarJuego();
 
+editarJuego();
 /*
 agregarJuego();
 eliminarJuego();
