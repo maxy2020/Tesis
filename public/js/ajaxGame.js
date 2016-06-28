@@ -2,7 +2,7 @@ function eliminarJuego () {
 	var id = 5;
 	$.ajax({
 		method: "GET",
-		url: "../requestGame.php",
+		url: "../php/requestGame.php",
 		data: {
 			"id":id
 		},
@@ -24,7 +24,7 @@ function agregarJuego () {
 	var url = "http://play.avix.tv/pinchar/";
 	$.ajax({
 		method: "POST",
-		url: "../requestGame.php",
+		url: "../php/requestGame.php",
 		data: {
 			"title":title,
 			"desc":desc,
@@ -50,7 +50,7 @@ function editarJuego () {
 	var avatar = "img/juegos/default.jpg";
 	$.ajax({
 		method: "POST",
-		url: "../requestGame.php",
+		url: "../php/requestGame.php",
 		data: {
 			"id":id,
 			"title":title,
@@ -72,8 +72,8 @@ function editarJuego () {
 
 
 
-editarJuego();
 /*
+editarJuego();
 agregarJuego();
 eliminarJuego();
 */
