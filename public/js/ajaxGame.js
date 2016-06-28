@@ -48,7 +48,6 @@ function editarJuego () {
 	var title = "Explotar globoss";
 	var desc = "Romper globos a muchaaaaa velocidad.";
 	var url = "http://play.avix.tv/pinchar/";
-	var avatar = "img/juegos/default.jpg";
 	$.ajax({
 		method: "POST",
 		url: "../php/requestGame.php",
@@ -56,8 +55,7 @@ function editarJuego () {
 			"id":id,
 			"title":title,
 			"desc":desc,
-			"url":url,
-			"avatar":avatar
+			"url":url
 		},
 		beforeSend: function() {
 			console.log("loader");
