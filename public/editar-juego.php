@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if($_SESSION){
+	if($_SESSION && isset($_GET['id'])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,15 +17,18 @@
 	<body class="reg alta-juego">
 		<?php
 			include("recursos/header.php");
+			require_once ("../php/classes/Videogame.php");
+			$game = Videogame::getGame($_GET['id']);
+			if($game['user_iduser'] == $_SESSION['iduser']){
 		?>
 
 		<main>
 			<div class="wrapper-center">
 				<h2 class="page-title">Editar Juego:</h2>
 				<form class="form" action="../php/requestUser.php" method="POST">
-					<input id="nombre" name="nombre" type="text" placeholder="Nombre" />
-					<input id="url" name="url" type="text" placeholder="URL" />
-					<textarea id="descripcion" name="desc" rows="6" placeholder="Descripción"></textarea>
+					<input id="nombre" name="nombre" type="text" placeholder="Nombre" value="<?php echo $game['title'];?>" />
+					<input id="url" name="url" type="text" placeholder="URL" value="<?php echo $game['url'];?>"/>
+					<textarea id="descripcion" name="desc" rows="6" placeholder="Descripción"><?php echo $game['description'];?></textarea>
 					<input id="regist" type="submit" value="Publicar" />
 				</form>
 				<div class="text-error">Usuario o mail no disponibles</div>
@@ -34,6 +37,11 @@
 		</main>
 
 		<?php
+			}
+			else {
+				header("Location: index.php");
+				exit;
+			}
 			include("recursos/footer.php");
 		?>
 	</body>
