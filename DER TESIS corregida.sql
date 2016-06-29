@@ -245,6 +245,7 @@ INSERT INTO `IndieGames`.`user` (`iduser`, `username`, `password`, `email`, `nam
 INSERT INTO `IndieGames`.`user` (`iduser`, `username`, `password`, `email`, `name`, `lastname`, `status`, `experience`, `level`, `birthday`, `hoursingame`, `avatar`) VALUES (2, 'test2', '$2y$10$TyM08kGxvmwxwMe25Idd.uWMU2DgShVNv2DSiQJEncW.UtJdXA.1m', 'test2@test.com', 'test2', NULL, 1, 0, 0, NULL, 0, NULL);
 INSERT INTO `IndieGames`.`user` (`iduser`, `username`, `password`, `email`, `name`, `lastname`, `status`, `experience`, `level`, `birthday`, `hoursingame`, `avatar`) VALUES (3, 'test3', '$2y$10$TyM08kGxvmwxwMe25Idd.uWMU2DgShVNv2DSiQJEncW.UtJdXA.1m', 'test3@test.com', 'test3', NULL, 0, 0, 0, NULL, 0, NULL);
 INSERT INTO `IndieGames`.`user` (`iduser`, `username`, `password`, `email`, `name`, `lastname`, `status`, `experience`, `level`, `birthday`, `hoursingame`, `avatar`) VALUES (4, 'test4', '$2y$10$TyM08kGxvmwxwMe25Idd.uWMU2DgShVNv2DSiQJEncW.UtJdXA.1m', 'test4@test.com', 'test4', NULL, 1, 0, 0, NULL, 0, NULL);
+INSERT INTO `IndieGames`.`user` (`iduser`, `username`, `password`, `email`, `name`, `lastname`, `status`, `experience`, `level`, `birthday`, `hoursingame`, `avatar`) VALUES (5, 'gonzalo', '$10$bAHG8iF.JZrTtFKqpjK.sOXp4TQnyPHIXnT85zRVdX6hiA15NUYsC', 'gonza@mail.com', 'gonza', NULL, 1, 0, 0, NULL, 0, NULL);
 
 COMMIT;
 
@@ -254,15 +255,15 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `IndieGames`;
-INSERT INTO `IndieGames`.`videogame` (`title`, `description`, `status`, `url`, `avatar`, `user_iduser`) VALUES ('Pinchar', 'Juego en el que se debe pinchar globos', 1,'http://play.avix.tv/pinchar/' , 'img/juegos/pinchar.jpg', 2);
-INSERT INTO `IndieGames`.`videogame` (`title`, `description`, `status`, `url`, `avatar`, `user_iduser`) VALUES ('Meat Beat Mania', 'Se debe hacer bailar al personaje', 1,'http://play.avix.tv/meatbeat/' , 'img/juegos/meatbeat.jpg', 2);
-INSERT INTO `IndieGames`.`videogame` (`title`, `description`, `status`, `url`, `avatar`, `user_iduser`) VALUES ('Triple Quest', 'Controlamos por separado las partes del guardian', 1,'http://play.avix.tv/triplequest/' , 'img/juegos/triplequest.jpg', 2);
+INSERT INTO `IndieGames`.`videogame` (`title`, `description`, `status`, `url`, `avatar`, `user_iduser`) VALUES ('Pinchar', 'Juego en el que se debe pinchar globos', 1,'http://play.avix.tv/pinchar/' , 'img/juegos/pinchar.jpg', 5);
+INSERT INTO `IndieGames`.`videogame` (`title`, `description`, `status`, `url`, `avatar`, `user_iduser`) VALUES ('Meat Beat Mania', 'Se debe hacer bailar al personaje', 1,'http://play.avix.tv/meatbeat/' , 'img/juegos/meatbeat.jpg', 5);
+INSERT INTO `IndieGames`.`videogame` (`title`, `description`, `status`, `url`, `avatar`, `user_iduser`) VALUES ('Triple Quest', 'Controlamos por separado las partes del guardian', 1,'http://play.avix.tv/triplequest/' , 'img/juegos/triplequest.jpg', 5);
 INSERT INTO `IndieGames`.`videogame` (`title`, `description`, `status`, `url`, `avatar`, `user_iduser`) VALUES ('Mercaderes', 'Controlamos los barcos en bsae la viento', 1,'http://play.avix.tv/mercaderes5/' , 'img/juegos/mercaderes5.jpg', 2);
-INSERT INTO `IndieGames`.`videogame` (`title`, `description`, `status`, `url`, `avatar`, `user_iduser`) VALUES ('Santa Sport', 'Santa debe lograr dejar los regalos en la chimenea', 1,'http://play.avix.tv/santa2015/' , 'img/juegos/santa2015.jpg', 2);
+INSERT INTO `IndieGames`.`videogame` (`title`, `description`, `status`, `url`, `avatar`, `user_iduser`) VALUES ('Santa Sport', 'Santa debe lograr dejar los regalos en la chimenea', 1,'http://play.avix.tv/santa2015/' , 'img/juegos/santa2015.jpg', 5);
 INSERT INTO `IndieGames`.`videogame` (`title`, `description`, `status`, `url`, `avatar`, `user_iduser`) VALUES ('Blastest', 'Debemos controlar una nave y vencer a la otra', 1,'http://play.avix.tv/blastest/' , 'img/juegos/blastest.jpg', 2);
-INSERT INTO `IndieGames`.`videogame` (`title`, `description`, `status`, `url`, `avatar`, `user_iduser`) VALUES ('Ninja', 'Controlas un ninja y debes evitar las distintas trampas que van apareciendo', 1,'http://play.avix.tv/ninjatest/' , 'img/juegos/ninjatest.jpg', 2);
+INSERT INTO `IndieGames`.`videogame` (`title`, `description`, `status`, `url`, `avatar`, `user_iduser`) VALUES ('Ninja', 'Controlas un ninja y debes evitar las distintas trampas que van apareciendo', 1,'http://play.avix.tv/ninjatest/' , 'img/juegos/ninjatest.jpg', 5);
 INSERT INTO `IndieGames`.`videogame` (`title`, `description`, `status`, `url`, `avatar`, `user_iduser`) VALUES ('Jumper', 'Usa un cubo y salta los obstaculos, muchos jugadores', 1,'http://play.avix.tv/jumpers/' , 'img/juegos/jumpers.jpg', 2);
-INSERT INTO `IndieGames`.`videogame` (`title`, `description`, `status`, `url`, `avatar`, `user_iduser`) VALUES ('Turn Right', 'Dobla solo para la derecha ese es el reto', 1,'http://play.avix.tv/turnright/' , 'img/juegos/turnright.jpg', 2);
+INSERT INTO `IndieGames`.`videogame` (`title`, `description`, `status`, `url`, `avatar`, `user_iduser`) VALUES ('Turn Right', 'Dobla solo para la derecha ese es el reto', 1,'http://play.avix.tv/turnright/' , 'img/juegos/turnright.jpg', 5);
 
 COMMIT;
 

@@ -546,6 +546,7 @@ body.reg input.error{
 body.mis-juego table{
 	width: 90%;
 	margin: auto;
+	margin-bottom: 50px;
 }
 body.mis-juego table .th-img{
 	width: 285px;

@@ -5,11 +5,11 @@
 					<div class="container-tabs">
 						<h3>Información:</h3>
 						<ul>
-							<li><a href="#">Terminos y Condiciones</a></li>
-							<li><a href="#">Politícas y Privacidad</a></li>
+							<li><a href="#">Términos y Condiciones</a></li>
+							<li><a href="#">Políticas y Privacidad</a></li>
 							<li><a href="#">Sobre Nosotros</a></li>
 							<li><a href="#">Preguntas Frecuentes</a></li>
-							<li><a href="#">Contactenos</a></li>
+							<li><a href="#">Contáctenos</a></li>
 						</ul>
 					</div>
 					<div class="container-tabs">
